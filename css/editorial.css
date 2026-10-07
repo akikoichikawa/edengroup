@@ -1,0 +1,337 @@
+.editorial-kicker {
+  font:
+    400 13px/1.6 Georgia,
+    serif;
+  letter-spacing: 0.24em;
+  color: #d8b87f;
+  margin-bottom: 28px;
+}
+.ceo-message {
+  position: relative;
+  background: #0a1118;
+  color: #f4efe5;
+  overflow: hidden;
+  border-top: 1px solid rgba(215, 183, 125, 0.18);
+}
+.ceo-layout {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(40px, 8vw, 120px);
+  max-width: 1200px;
+  margin: auto;
+  align-items: start;
+}
+.ceo-brand {
+  position: relative;
+  padding-top: 8px;
+}
+.ceo-brand img {
+  display: block;
+  width: 85%;
+  max-width: 300px;
+  height: auto;
+  margin: 50px 0 32px;
+  filter: drop-shadow(0 0 28px rgba(203, 163, 92, 0.14));
+}
+.ceo-brand > span {
+  font:
+    18px Georgia,
+    serif;
+  letter-spacing: 0.23em;
+  color: #dec18c;
+}
+.ceo-message .ceo-copy h2 {
+  font:
+    400 clamp(30px, 3.5vw, 50px)/1.65 "Noto Serif JP",
+    serif;
+  color: #e4c590;
+  letter-spacing: 0.06em;
+  margin: 0 0 35px;
+}
+.ceo-copy h2 span {
+  display: block;
+}
+.ceo-body p {
+  font:
+    400 16px/2.3 "Noto Sans JP",
+    sans-serif;
+  letter-spacing: 0.035em;
+  color: #c9d0d0;
+  margin: 0 0 24px;
+}
+.ceo-signature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 42px;
+  padding-top: 27px;
+  border-top: 1px solid rgba(215, 183, 125, 0.25);
+  gap: 10px;
+}
+.ceo-signature > span {
+  font-size: 14px;
+  color: #bdc4c4;
+}
+.ceo-signature strong {
+  font:
+    400 28px/1.6 "Noto Serif JP",
+    serif;
+  letter-spacing: 0.15em;
+  color: #e6cd9c;
+}
+.ceo-signature small {
+  font:
+    12px Georgia,
+    serif;
+  letter-spacing: 0.2em;
+  color: #a38e6d;
+}
+.ceo-layout[data-reveal] .ceo-body,
+.ceo-layout[data-reveal] .ceo-signature {
+  transition:
+    opacity 1s 0.25s,
+    translate 1.1s 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ceo-layout[data-reveal]:not(.visible) .ceo-body,
+.ceo-layout[data-reveal]:not(.visible) .ceo-signature {
+  opacity: 0;
+  translate: 0 18px;
+}
+.ceo-layout.visible .ceo-signature {
+  transition-delay: 0.5s;
+}
+.newsroom {
+  background: #eeeae2;
+  color: #111b24;
+}
+.newsroom .section-kicker,
+.newsroom .section-number {
+  color: #967343;
+}
+.newsroom .section-head {
+  margin-bottom: 50px;
+}
+.newsroom .section-head:after {
+  background: linear-gradient(90deg, #9f7a48, transparent);
+}
+.news-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(30px, 6vw, 85px);
+  align-items: center;
+  color: inherit;
+  max-width: 1200px;
+  margin: auto;
+}
+.news-picture {
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: #17232b;
+}
+.news-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.news-feature:hover img {
+  transform: scale(1.04);
+}
+.news-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  font:
+    12px/1.6 Georgia,
+    serif;
+  letter-spacing: 0.09em;
+  color: #8b693b;
+  margin-bottom: 28px;
+}
+.news-feature h3 {
+  font:
+    400 clamp(36px, 4vw, 60px)/1.55 "Noto Serif JP",
+    serif;
+  letter-spacing: 0.04em;
+  margin: 0 0 27px;
+}
+.news-feature h3 span {
+  display: block;
+}
+.news-subtitle {
+  font:
+    400 19px/1.8 "Noto Serif JP",
+    serif;
+  margin: 0 0 22px;
+}
+.news-summary {
+  font-size: 15px;
+  line-height: 2;
+  color: #5b6264;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+.editorial-link {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.8;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #a7834d;
+  color: inherit;
+  transition: color 0.3s;
+}
+.news-feature:hover .editorial-link {
+  color: #906a31;
+}
+.news-feature:focus-visible,
+.editorial-link:focus-visible {
+  outline: 2px solid #a7834d;
+  outline-offset: 8px;
+}
+.news-article-page {
+  background: #eeeae2;
+  color: #17212a;
+}
+.news-article {
+  max-width: 1100px;
+  margin: auto;
+  padding: 160px 35px 100px;
+}
+.news-article .editorial-kicker {
+  color: #947343;
+}
+.news-article h1 {
+  font:
+    400 clamp(28px, 3.5vw, 47px)/1.65 "Noto Serif JP",
+    serif;
+  letter-spacing: 0.025em;
+  margin: 25px 0;
+}
+.news-article h1 span {
+  display: block;
+}
+.article-lead {
+  font:
+    18px/1.8 "Noto Serif JP",
+    serif;
+  color: #806441;
+  margin: 25px 0 45px;
+}
+.news-article figure {
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+.news-article figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.news-article figcaption {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #6f777a;
+  margin-top: 12px;
+}
+.article-body {
+  max-width: 760px;
+  margin: auto;
+}
+.article-body p {
+  font-size: 16px;
+  line-height: 2.25;
+  margin: 0 0 25px;
+}
+.article-back {
+  display: block;
+  max-width: 760px;
+  margin: 60px auto 0;
+  padding-top: 25px;
+  border-top: 1px solid #c9b99e;
+  font-size: 14px;
+}
+@media (max-width: 850px) {
+  .ceo-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .ceo-brand {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+  }
+  .ceo-brand .editorial-kicker {
+    margin: 0;
+  }
+  .ceo-brand img {
+    width: 100px;
+    margin: 0;
+    grid-column: 2;
+    grid-row: 1/3;
+  }
+  .ceo-brand > span {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .news-feature {
+    gap: 30px;
+  }
+  .ceo-message .ceo-copy h2 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 650px) {
+  .ceo-message .ceo-copy h2 {
+    font-size: clamp(27px, 7.2vw, 36px);
+    letter-spacing: 0.035em;
+  }
+  .ceo-body p {
+    font-size: 16px;
+    line-height: 2.1;
+  }
+  .ceo-signature strong {
+    font-size: 25px;
+  }
+  .news-feature {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .newsroom .section-head h2 {
+    font-size: clamp(24px, 6.4vw, 34px);
+    letter-spacing: 0.02em;
+  }
+  .news-feature h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  .news-meta {
+    margin-bottom: 20px;
+  }
+  .news-summary {
+    font-size: 16px;
+  }
+  .news-article {
+    padding: 125px 6vw 70px;
+  }
+  .news-article h1 {
+    font-size: 28px;
+  }
+  .article-lead {
+    font-size: 17px;
+  }
+  .news-article figure {
+    margin-bottom: 30px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ceo-layout[data-reveal] .ceo-body,
+  .ceo-layout[data-reveal] .ceo-signature {
+    opacity: 1 !important;
+    translate: none !important;
+    transition: none;
+  }
+  .news-picture img {
+    transition: none;
+    transform: none !important;
+  }
+}
