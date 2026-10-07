@@ -186,23 +186,6 @@ p {
 .hero .hero-cta:hover {
   color: var(--gold);
 }
-.hero-note {
-  position: absolute;
-  right: 27px;
-  bottom: 22px;
-  font-size: 11px;
-  color: #e6e0d4;
-}
-.hero-index {
-  position: absolute;
-  left: clamp(24px, 8vw, 145px);
-  bottom: 30px;
-  color: var(--gold);
-  font:
-    11px Georgia,
-    serif;
-  letter-spacing: 0.2em;
-}
 @keyframes drift {
   from {
     transform: scale(1.02) translateX(-1%);
@@ -275,13 +258,6 @@ p {
   display: flex;
   flex-direction: column;
 }
-.field .num {
-  font:
-    12px Georgia,
-    serif;
-  color: #927044;
-  letter-spacing: 0.18em;
-}
 .field h3 {
   font:
     400 clamp(29px, 3vw, 46px) Georgia,
@@ -309,17 +285,6 @@ p {
   overflow: hidden;
   padding: 130px clamp(24px, 8vw, 145px);
   background: #111a23;
-}
-.contact:before {
-  content: "EDEN";
-  position: absolute;
-  right: -20px;
-  bottom: -120px;
-  font:
-    clamp(190px, 26vw, 410px) Georgia,
-    serif;
-  color: rgba(255, 255, 255, 0.025);
-  pointer-events: none;
 }
 .contact-inner {
   position: relative;
@@ -471,9 +436,6 @@ p {
   }
   .hero p {
     font-size: 14px;
-  }
-  .hero-index {
-    display: none;
   }
   .intro,
   .fields,

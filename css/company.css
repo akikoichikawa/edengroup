@@ -283,18 +283,6 @@ p {
   line-height: 2.25;
   letter-spacing: 0.035em;
 }
-.intro .eyeline {
-  height: 1px;
-  background: #b39972;
-  margin: 45px 0 20px;
-}
-.intro .caption {
-  color: #9b7b4f;
-  font:
-    11px Georgia,
-    serif;
-  letter-spacing: 0.22em;
-}
 .business {
   background: #0e1720;
 }
@@ -349,13 +337,6 @@ p {
 .card .text {
   min-height: 265px;
   padding: 32px;
-}
-.card .num {
-  font:
-    11px Georgia,
-    serif;
-  letter-spacing: 0.2em;
-  color: var(--gold);
 }
 .card h3 {
   font:
@@ -837,4 +818,17 @@ p {
 /* 長い社名の見出し（EDEN PRODUCTION） */
 .card .text h3.is-long {
   font-size: clamp(25px, 2.4vw, 37px);
+}
+
+/* =========================================================
+   ブラッシュアップ（2026年10月）
+   ========================================================= */
+/* 事業カードの英字見出し：4列でも折り返さない大きさに */
+.card h3 {
+  font-size: clamp(26px, 2.2vw, 34px);
+  letter-spacing: 0.03em;
+}
+/* 文字組み：キャッチコピーの字間を詰める */
+.hero .jp {
+  letter-spacing: 0.08em;
 }

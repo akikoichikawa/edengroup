@@ -190,18 +190,6 @@ h1 em {
   background: var(--ink);
   color: #fff;
 }
-.hero-foot {
-  position: absolute;
-  left: 4vw;
-  right: 4vw;
-  bottom: 24px;
-  display: flex;
-  justify-content: space-between;
-  font:
-    11px Georgia,
-    serif;
-  letter-spacing: 0.18em;
-}
 .section {
   padding: clamp(80px, 10vw, 160px) 7vw;
 }
@@ -623,9 +611,6 @@ footer small {
   .button {
     width: 100%;
     min-height: 50px;
-  }
-  .hero-foot {
-    bottom: 16px;
   }
   .section {
     padding: 78px 6vw;
