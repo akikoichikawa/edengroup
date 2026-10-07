@@ -44,6 +44,7 @@ h2 {
 h2 em,
 h1 em {
   font-family: "Cormorant Garamond", Georgia, serif;
+  font-variant-numeric: lining-nums;
   font-style: normal;
   font-weight: 400;
 }
@@ -62,6 +63,7 @@ h1 em {
     600 22px/0.82 "Cormorant Garamond",
     Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
@@ -144,6 +146,7 @@ h1 em {
     500 clamp(4rem, 9.4vw, 10rem)/0.84 "Cormorant Garamond",
     Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: -0.035em;
   margin: 0 0 32px;
 }
@@ -231,6 +234,7 @@ h1 em {
     500 15px "Cormorant Garamond",
     Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.08em;
 }
 .winners {
@@ -298,6 +302,7 @@ h1 em {
     500 12px "Cormorant Garamond",
     Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.16em;
   color: #d8bc88;
 }
@@ -337,8 +342,10 @@ h1 em {
 }
 .statement p {
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.25em;
   color: #e2cda7;
 }
@@ -381,12 +388,14 @@ h1 em {
     200px "Cormorant Garamond",
     Georgia,
     serif;
+  font-variant-numeric: lining-nums;
 }
 .entry-panel h3 {
   font:
     500 clamp(70px, 9vw, 140px)/0.8 "Cormorant Garamond",
     Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   position: relative;
   margin: 50px 0 24px;
 }
@@ -444,8 +453,10 @@ h1 em {
 }
 .sponsor-list span {
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   color: #8b744f;
   letter-spacing: 0.14em;
 }
@@ -468,8 +479,10 @@ h1 em {
 .closing p {
   color: var(--gold);
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.2em;
 }
 .closing h2 {
@@ -500,6 +513,7 @@ footer strong {
     500 32px/0.9 "Cormorant Garamond",
     Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   color: #fff;
   display: block;
   margin-bottom: 30px;
@@ -521,8 +535,10 @@ footer small {
   padding-top: 18px;
   color: #777;
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.14em;
 }
 @media (max-width: 1000px) {
@@ -730,8 +746,10 @@ footer small {
 }
 .tier-heading span {
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.16em;
   color: #92774c;
 }

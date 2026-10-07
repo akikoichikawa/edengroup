@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap");
 :root {
   --ink: #080d13;
   --ink2: #101923;
@@ -59,7 +59,8 @@ button {
   align-items: center;
   gap: 10px;
   letter-spacing: 0.16em;
-  font-family: Georgia, serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-variant-numeric: lining-nums;
   font-size: 19px;
   font-weight: 400;
   white-space: nowrap;
@@ -168,8 +169,10 @@ button {
   gap: 15px;
   color: var(--gold);
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.29em;
   text-transform: uppercase;
 }
@@ -240,8 +243,10 @@ p {
   right: clamp(24px, 5vw, 90px);
   bottom: 54px;
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.2em;
   color: var(--gold);
 }
@@ -258,8 +263,10 @@ p {
 .section-kicker {
   color: var(--gold);
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.31em;
   text-transform: uppercase;
   margin-bottom: 22px;
@@ -274,8 +281,10 @@ p {
 }
 .section-number {
   font:
-    13px Georgia,
+    500 14px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.15em;
   color: #707a83;
 }
@@ -347,8 +356,10 @@ p {
 }
 .business-card h3 {
   font:
-    400 clamp(33px, 3.5vw, 58px) Georgia,
+    400 clamp(33px, 3.5vw, 58px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.04em;
   line-height: 1.15;
   margin: 75px 0 20px;
@@ -370,8 +381,10 @@ p {
   right: 34px;
   top: 37px;
   font:
-    29px Georgia,
+    29px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   color: #a38555;
   transition: transform 0.3s;
 }
@@ -469,8 +482,10 @@ p {
 }
 .backtop {
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.18em;
   color: var(--gold);
 }
@@ -1056,8 +1071,10 @@ p {
 .events .small-label {
   color: #957346;
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.2em;
   margin-bottom: 22px;
 }
@@ -1100,8 +1117,10 @@ p {
 }
 .achievement strong {
   font:
-    400 47px Georgia,
+    400 47px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   color: #9b7745;
   white-space: nowrap;
 }
@@ -1247,8 +1266,10 @@ p {
   display: block;
   color: #e2c188;
   font:
-    400 clamp(38px, 4vw, 62px) Georgia,
+    400 clamp(38px, 4vw, 62px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   line-height: 1.1;
 }
 .about-facts .fact:last-child strong {
@@ -1259,8 +1280,10 @@ p {
   display: block;
   color: #e2d8c8;
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.18em;
   margin-top: 17px;
 }
@@ -1397,8 +1420,10 @@ p {
 }
 .motion-track span {
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.23em;
   padding: 0 28px;
 }
@@ -1556,8 +1581,10 @@ p {
   z-index: 2;
   color: rgba(239, 204, 147, 0.87);
   font:
-    400 clamp(64px, 8.5vw, 145px) Georgia,
+    400 clamp(64px, 8.5vw, 145px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   line-height: 0.85;
   letter-spacing: 0.08em;
   text-align: center;
@@ -1719,8 +1746,10 @@ p {
 }
 .business-card.venture h3 {
   font:
-    400 clamp(29px, 2.7vw, 44px) Georgia,
+    400 clamp(29px, 2.7vw, 44px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   line-height: 1.12;
   letter-spacing: 0.02em;
   margin: 0 0 12px;
@@ -2017,8 +2046,10 @@ p {
   gap: 14px;
   color: #e8d7b9;
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.17em;
   pointer-events: none;
 }
@@ -2394,8 +2425,10 @@ p {
   bottom: -0.46em;
   color: rgba(222, 190, 135, 0.025);
   font:
-    clamp(480px, 60vw, 950px) Georgia,
+    clamp(480px, 60vw, 950px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   pointer-events: none;
 }
 .group .section-head {
@@ -2453,15 +2486,19 @@ p {
 }
 .group-company .number {
   font:
-    14px Georgia,
+    14px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   color: #c8a66e;
   letter-spacing: 0.2em;
 }
 .group-company h3 {
   font:
-    400 clamp(29px, 3.1vw, 49px) Georgia,
+    400 clamp(29px, 3.1vw, 49px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.04em;
   margin: 0 0 10px;
 }
@@ -2473,8 +2510,10 @@ p {
 }
 .group-company .mark {
   font:
-    32px Georgia,
+    32px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   color: #d3b37d;
   opacity: 0.65;
   transition:
@@ -2646,8 +2685,10 @@ p {
 .profile-panel .kicker {
   color: #8e6d40;
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.25em;
 }
 .profile-panel h3 {
@@ -2733,8 +2774,10 @@ p {
 }
 .footer-column h3 {
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.23em;
   color: #d2b17b;
   margin: 0 0 25px;
@@ -2783,8 +2826,10 @@ p {
   justify-content: center;
   color: rgba(219, 183, 126, 0.12);
   font:
-    clamp(115px, 19vw, 320px)/0.8 Georgia,
+    clamp(115px, 19vw, 320px)/0.8 "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.11em;
   white-space: nowrap;
   user-select: none;
@@ -3480,8 +3525,10 @@ p {
 }
 .hero-emblem span {
   font:
-    400 clamp(18px, 2vw, 30px) Georgia,
+    400 clamp(18px, 2vw, 30px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.3em;
   margin: 28px 0 0;
   text-indent: 0.3em;
@@ -3646,8 +3693,10 @@ p {
 .universe-heading > span {
   color: #e9c891;
   font:
-    14px Georgia,
+    14px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.32em;
 }
 .universe-heading p {
@@ -3683,8 +3732,10 @@ p {
   display: block;
   color: #efcf99;
   font:
-    clamp(20px, 2.4vw, 31px) Georgia,
+    clamp(20px, 2.4vw, 31px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.17em;
   margin-top: 24px;
   white-space: nowrap;
@@ -3693,8 +3744,10 @@ p {
   display: block;
   color: #baa67f;
   font:
-    11px/1.8 Georgia,
+    500 12px/1.8 "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.12em;
   margin-top: 13px;
 }
@@ -3764,8 +3817,10 @@ p {
 .eden-satellite small {
   display: block;
   font:
-    11px/1.6 Georgia,
+    500 12px/1.6 "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.12em;
   margin-top: 3px;
   opacity: 0.7;
@@ -4682,8 +4737,10 @@ p {
   background: rgba(6, 12, 18, 0.9);
   color: var(--gold);
   font:
-    15px Georgia,
+    17px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.06em;
   transition:
     border-color 0.5s,
@@ -4721,7 +4778,7 @@ p {
   .satellite-mark {
     width: 50px;
     height: 50px;
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -1,7 +1,9 @@
 .editorial-kicker {
   font:
-    400 13px/1.6 Georgia,
+    400 14px/1.6 "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.24em;
   color: #d8b87f;
   margin-bottom: 28px;
@@ -35,8 +37,10 @@
 }
 .ceo-brand > span {
   font:
-    18px Georgia,
+    18px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.23em;
   color: #dec18c;
 }
@@ -81,8 +85,10 @@
 }
 .ceo-signature small {
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.2em;
   color: #a38e6d;
 }
@@ -143,8 +149,10 @@
   flex-wrap: wrap;
   gap: 12px 22px;
   font:
-    12px/1.6 Georgia,
+    500 13px/1.6 "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.09em;
   color: #8b693b;
   margin-bottom: 28px;

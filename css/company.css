@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;500&display=swap");
 :root {
   --dark: #0a1017;
   --panel: #111a23;
@@ -63,8 +63,10 @@ p {
   gap: 12px;
   color: #dfbf87;
   font:
-    23px Georgia,
+    23px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.09em;
 }
 .brand-mark {
@@ -151,8 +153,10 @@ p {
 .kicker {
   color: #e2c18a;
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.3em;
   text-transform: uppercase;
 }
@@ -167,8 +171,10 @@ p {
 }
 .hero h1 {
   font:
-    400 clamp(55px, 8vw, 128px)/1.04 Georgia,
+    400 clamp(55px, 8vw, 128px)/1.04 "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.04em;
   margin: 31px 0 22px;
   color: #eddbc0;
@@ -195,8 +201,10 @@ p {
   padding-bottom: 10px;
   color: #e9d8b9;
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.2em;
   transition: gap 0.3s;
 }
@@ -218,8 +226,10 @@ p {
   justify-content: space-between;
   color: #d8c8ab;
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.18em;
   background: rgba(5, 9, 14, 0.43);
   backdrop-filter: blur(7px);
@@ -257,8 +267,10 @@ p {
 }
 .section-kicker {
   font:
-    11px Georgia,
+    500 12px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.27em;
   color: #a17e4a;
   text-transform: uppercase;
@@ -302,8 +314,10 @@ p {
 .business-head span {
   color: #8e969a;
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.18em;
 }
 .cards {
@@ -340,8 +354,10 @@ p {
 }
 .card h3 {
   font:
-    400 clamp(30px, 3vw, 47px) Georgia,
+    400 clamp(30px, 3vw, 47px) "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   margin: 26px 0 4px;
 }
 .card .jp {
@@ -381,8 +397,10 @@ p {
 }
 .store-list b {
   font:
-    12px Georgia,
+    500 13px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   color: #927044;
   font-weight: 400;
 }
@@ -444,8 +462,10 @@ p {
   padding: 16px 35px;
   color: #e6c68e;
   font:
-    20px Georgia,
+    20px "Cormorant Garamond",
+    Georgia,
     serif;
+  font-variant-numeric: lining-nums;
   letter-spacing: 0.12em;
   margin-top: 24px;
   transition:
