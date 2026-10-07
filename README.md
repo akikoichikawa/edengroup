@@ -14,8 +14,14 @@ MAMP を起動し、次の URL を開きます。
 
 - http://localhost:8888/edengroup/
 
+## お客様確認用プレビュー（GitHub Pages）
+
+- https://akikoichikawa.github.io/edengroup/
+- 静的ページのみ表示されます。ブログ（WordPress）は表示されません
+
 ## 公開前の対応
 
+- 全ページの `<meta name="robots">` をプレビュー用の noindex から `index,follow` に戻す（best-of-miss-fukuoka.html は元々指定なしのため行ごと削除）
 - canonical・OGP・構造化データ・sitemap.xml・robots.txt のURLを新ドメインに更新
 - EDEN BANK ページの店舗固有名を「複数店舗運営」に修正
 - 代表者名の表記を「田中 弘樹」に統一
