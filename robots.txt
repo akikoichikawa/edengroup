@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eden-group-corporate.hcf77vpx65.chatgpt.site/sitemap.xml

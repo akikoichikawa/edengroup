@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+*.log
+# WordPress（/news/ 配下に導入予定）の設定・アップロードはリポジトリに含めない
+news/wp-config.php
+news/wp-content/uploads/
+news/wp-content/cache/
+news/wp-content/upgrade/
