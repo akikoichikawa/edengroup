@@ -23,6 +23,4 @@ MAMP を起動し、次の URL を開きます。
 
 - 全ページの `<meta name="robots">` をプレビュー用の noindex から `index,follow` に戻す（best-of-miss-fukuoka.html は元々指定なしのため行ごと削除）
 - canonical・OGP・構造化データ・sitemap.xml・robots.txt のURLを新ドメインに更新
-- EDEN BANK ページの店舗固有名を「複数店舗運営」に修正
-- 代表者名の表記を「田中 弘樹」に統一
 - BEST OF MISS FUKUOKA ページの外部画像（Wix）17点を有料画像に差し替え
