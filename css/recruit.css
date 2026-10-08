@@ -678,3 +678,24 @@ p {
     transform: scaleX(1);
   }
 }
+
+/* 余白：セクションの上下・左右を広げ、ゆとりを持たせる */
+@media (min-width: 851px) {
+  .intro,
+  .fields,
+  .contact {
+    padding: 165px 10vw;
+  }
+  .hero {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (max-width: 850px) {
+  .intro,
+  .fields,
+  .contact {
+    padding-top: 105px;
+    padding-bottom: 105px;
+  }
+}

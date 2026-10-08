@@ -604,9 +604,7 @@ footer small {
     object-position: 54% center;
   }
   .hero-shade {
-    background:
-      linear-gradient(0deg, rgba(0, 0, 0, 0.78), transparent 78%),
-      linear-gradient(90deg, #0006, transparent);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.78), transparent 78%), linear-gradient(90deg, #0006, transparent);
   }
   .hero-content {
     left: 6vw;

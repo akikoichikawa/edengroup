@@ -135,12 +135,7 @@ button {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(
-      90deg,
-      rgba(2, 7, 12, 0.87) 0%,
-      rgba(2, 8, 14, 0.48) 46%,
-      rgba(2, 8, 14, 0.08) 100%
-    ),
+    linear-gradient(90deg, rgba(2, 7, 12, 0.87) 0%, rgba(2, 8, 14, 0.48) 46%, rgba(2, 8, 14, 0.08) 100%),
     linear-gradient(0deg, rgba(5, 10, 15, 0.85), transparent 38%);
 }
 .hero-light {
@@ -148,12 +143,7 @@ button {
   inset: -30%;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(
-    115deg,
-    transparent 35%,
-    rgba(210, 175, 118, 0.08) 49%,
-    transparent 62%
-  );
+  background: linear-gradient(115deg, transparent 35%, rgba(210, 175, 118, 0.08) 49%, transparent 62%);
   animation: lightMove 18s ease-in-out infinite alternate;
 }
 .hero-content {
@@ -411,12 +401,7 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    #0c141d 6%,
-    rgba(12, 20, 29, 0.88) 50%,
-    rgba(12, 20, 29, 0.15)
-  );
+  background: linear-gradient(90deg, #0c141d 6%, rgba(12, 20, 29, 0.88) 50%, rgba(12, 20, 29, 0.15));
 }
 .vision-inner {
   position: relative;
@@ -727,12 +712,10 @@ p {
     url("../assets/architecture-hero.png") 58% center/cover;
 }
 .business-card.suits {
-  background:
-    radial-gradient(circle at 85% 10%, rgba(198, 170, 121, 0.15), transparent 48%), #16181b;
+  background: radial-gradient(circle at 85% 10%, rgba(198, 170, 121, 0.15), transparent 48%), #16181b;
 }
 .business-card.suits:hover {
-  background:
-    radial-gradient(circle at 85% 10%, rgba(198, 170, 121, 0.22), transparent 48%), #202226;
+  background: radial-gradient(circle at 85% 10%, rgba(198, 170, 121, 0.22), transparent 48%), #202226;
 }
 .service-list {
   list-style: none;
@@ -814,12 +797,7 @@ p {
   will-change: transform, opacity;
 }
 .hero-light {
-  background: linear-gradient(
-    105deg,
-    transparent 28%,
-    rgba(219, 177, 105, 0.18) 49%,
-    transparent 68%
-  );
+  background: linear-gradient(105deg, transparent 28%, rgba(219, 177, 105, 0.18) 49%, transparent 68%);
   animation: lightMove 9s ease-in-out infinite alternate;
 }
 .hero-content .eyebrow {
@@ -947,22 +925,12 @@ p {
 }
 .business-card.suits {
   background:
-    linear-gradient(
-      90deg,
-      rgba(8, 12, 16, 0.92) 0%,
-      rgba(8, 12, 16, 0.64) 55%,
-      rgba(8, 12, 16, 0.26)
-    ),
+    linear-gradient(90deg, rgba(8, 12, 16, 0.92) 0%, rgba(8, 12, 16, 0.64) 55%, rgba(8, 12, 16, 0.26)),
     url("../assets/order-suit-editorial.png") center center/cover no-repeat;
 }
 .business-card.suits:hover {
   background:
-    linear-gradient(
-      90deg,
-      rgba(8, 12, 16, 0.82) 0%,
-      rgba(8, 12, 16, 0.5) 55%,
-      rgba(8, 12, 16, 0.2)
-    ),
+    linear-gradient(90deg, rgba(8, 12, 16, 0.82) 0%, rgba(8, 12, 16, 0.5) 55%, rgba(8, 12, 16, 0.2)),
     url("../assets/order-suit-editorial.png") center center/cover no-repeat;
 }
 .business-card.suits .service-list {
@@ -1326,12 +1294,7 @@ p {
   min-height: 720px;
 }
 .vision:after {
-  background: linear-gradient(
-    90deg,
-    #0a1119 8%,
-    rgba(10, 17, 25, 0.86) 55%,
-    rgba(10, 17, 25, 0.34)
-  );
+  background: linear-gradient(90deg, #0a1119 8%, rgba(10, 17, 25, 0.86) 55%, rgba(10, 17, 25, 0.34));
 }
 .vision h2 {
   font-size: clamp(42px, 4.6vw, 74px);
@@ -1464,12 +1427,7 @@ p {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(5, 9, 14, 0.9) 3%,
-    rgba(5, 9, 14, 0.7) 48%,
-    rgba(5, 9, 14, 0.18)
-  );
+  background: linear-gradient(90deg, rgba(5, 9, 14, 0.9) 3%, rgba(5, 9, 14, 0.7) 48%, rgba(5, 9, 14, 0.18));
 }
 .recruit-teaser .inner {
   max-width: 740px;
@@ -1566,12 +1524,7 @@ p {
 }
 .hero:after {
   background:
-    linear-gradient(
-      90deg,
-      rgba(3, 7, 12, 0.93) 0%,
-      rgba(3, 7, 12, 0.64) 47%,
-      rgba(3, 7, 12, 0.1) 100%
-    ),
+    linear-gradient(90deg, rgba(3, 7, 12, 0.93) 0%, rgba(3, 7, 12, 0.64) 47%, rgba(3, 7, 12, 0.1) 100%),
     linear-gradient(0deg, rgba(5, 10, 15, 0.72), transparent 35%);
 }
 .hero-wordmark {
@@ -1716,12 +1669,7 @@ p {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(4, 8, 13, 0.94),
-    rgba(4, 8, 13, 0.55) 54%,
-    rgba(4, 8, 13, 0.14)
-  );
+  background: linear-gradient(0deg, rgba(4, 8, 13, 0.94), rgba(4, 8, 13, 0.55) 54%, rgba(4, 8, 13, 0.14));
   pointer-events: none;
 }
 .business-card.venture .card-media {
@@ -1789,12 +1737,7 @@ p {
   background-position: center 45%;
 }
 .business-card.venture.featured:before {
-  background: linear-gradient(
-    90deg,
-    rgba(4, 8, 13, 0.95),
-    rgba(4, 8, 13, 0.65) 50%,
-    rgba(4, 8, 13, 0.08)
-  );
+  background: linear-gradient(90deg, rgba(4, 8, 13, 0.95), rgba(4, 8, 13, 0.65) 50%, rgba(4, 8, 13, 0.08));
 }
 .business-card.venture.featured p {
   max-width: 540px;
@@ -1894,12 +1837,7 @@ p {
 }
 .hero:after {
   background:
-    linear-gradient(
-      90deg,
-      rgba(3, 7, 12, 0.91) 0%,
-      rgba(3, 7, 12, 0.55) 48%,
-      rgba(3, 7, 12, 0.1) 100%
-    ),
+    linear-gradient(90deg, rgba(3, 7, 12, 0.91) 0%, rgba(3, 7, 12, 0.55) 48%, rgba(3, 7, 12, 0.1) 100%),
     linear-gradient(0deg, rgba(5, 10, 15, 0.65), transparent 35%);
 }
 @keyframes sharpWide {
@@ -2197,12 +2135,7 @@ p {
   height: 1px;
 }
 .business-card.venture:before {
-  background: linear-gradient(
-    0deg,
-    rgba(3, 7, 12, 0.97),
-    rgba(3, 7, 12, 0.54) 56%,
-    rgba(3, 7, 12, 0.1)
-  );
+  background: linear-gradient(0deg, rgba(3, 7, 12, 0.97), rgba(3, 7, 12, 0.54) 56%, rgba(3, 7, 12, 0.1));
 }
 .business-card.venture .card-media {
   opacity: 0.93;
@@ -2629,12 +2562,7 @@ p {
     min-height: 455px;
   }
   .business-card.venture:first-child:before {
-    background: linear-gradient(
-      90deg,
-      rgba(3, 7, 12, 0.92),
-      rgba(3, 7, 12, 0.52) 48%,
-      rgba(3, 7, 12, 0.07)
-    );
+    background: linear-gradient(90deg, rgba(3, 7, 12, 0.92), rgba(3, 7, 12, 0.52) 48%, rgba(3, 7, 12, 0.07));
   }
   .business-card.venture:first-child p {
     max-width: 440px;
@@ -3000,14 +2928,7 @@ p {
   }
 }
 .hero-wordmark {
-  background: linear-gradient(
-    110deg,
-    #b7955f 10%,
-    #fae9c3 38%,
-    #c29c61 53%,
-    #f5dfb3 72%,
-    #b7955f 95%
-  );
+  background: linear-gradient(110deg, #b7955f 10%, #fae9c3 38%, #c29c61 53%, #f5dfb3 72%, #b7955f 95%);
   background-size: 220% 100%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -3340,12 +3261,7 @@ p {
   pointer-events: none;
   width: auto;
   height: auto;
-  background: linear-gradient(
-    115deg,
-    transparent 20%,
-    rgba(241, 216, 171, 0.12) 48%,
-    transparent 70%
-  );
+  background: linear-gradient(115deg, transparent 20%, rgba(241, 216, 171, 0.12) 48%, transparent 70%);
   transform: translateX(-130%);
   transition: transform 1.2s ease;
   opacity: 1;
@@ -3364,11 +3280,7 @@ p {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: radial-gradient(
-    ellipse at var(--glow-x, 80%) 35%,
-    rgba(198, 170, 121, 0.1),
-    transparent 55%
-  );
+  background: radial-gradient(ellipse at var(--glow-x, 80%) 35%, rgba(198, 170, 121, 0.1), transparent 55%);
   pointer-events: none;
 }
 .group-company .number {
@@ -3519,8 +3431,7 @@ p {
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 14px 25px rgba(0, 0, 0, 0.8))
-    drop-shadow(0 0 26px rgba(215, 173, 100, 0.28));
+  filter: drop-shadow(0 14px 25px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 26px rgba(215, 173, 100, 0.28));
   animation: emblemGlow 8s 2s ease-in-out infinite;
 }
 .hero-emblem span {
@@ -3539,12 +3450,7 @@ p {
   position: absolute;
   inset: -20%;
   z-index: -1;
-  background: radial-gradient(
-    ellipse,
-    rgba(8, 14, 21, 0.75) 10%,
-    rgba(8, 14, 21, 0.35) 45%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse, rgba(8, 14, 21, 0.75) 10%, rgba(8, 14, 21, 0.35) 45%, transparent 70%);
 }
 @keyframes emblemEntrance {
   from {
@@ -3559,12 +3465,10 @@ p {
 @keyframes emblemGlow {
   0%,
   100% {
-    filter: drop-shadow(0 14px 25px rgba(0, 0, 0, 0.8))
-      drop-shadow(0 0 20px rgba(215, 173, 100, 0.18));
+    filter: drop-shadow(0 14px 25px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 20px rgba(215, 173, 100, 0.18));
   }
   50% {
-    filter: drop-shadow(0 14px 25px rgba(0, 0, 0, 0.8))
-      drop-shadow(0 0 38px rgba(240, 198, 119, 0.45));
+    filter: drop-shadow(0 14px 25px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 38px rgba(240, 198, 119, 0.45));
   }
 }
 .mobile-emblem {
@@ -4085,12 +3989,7 @@ p {
   content: "";
   position: absolute;
   inset: -30%;
-  background: linear-gradient(
-    115deg,
-    transparent 42%,
-    rgba(247, 217, 161, 0.07) 49%,
-    transparent 56%
-  );
+  background: linear-gradient(115deg, transparent 42%, rgba(247, 217, 161, 0.07) 49%, transparent 56%);
   animation: signatureSweep 12s 1s ease-in-out infinite;
 }
 @keyframes signatureLight {
@@ -4211,12 +4110,7 @@ p {
   content: "";
   position: absolute;
   inset: -30%;
-  background: linear-gradient(
-    110deg,
-    transparent 40%,
-    rgba(255, 226, 166, 0.2) 49%,
-    transparent 58%
-  );
+  background: linear-gradient(110deg, transparent 40%, rgba(255, 226, 166, 0.2) 49%, transparent 58%);
   transform: translateX(-80%);
   opacity: 0;
   pointer-events: none;
@@ -4297,12 +4191,7 @@ p {
 }
 .hero:after {
   background:
-    linear-gradient(
-      90deg,
-      rgba(2, 7, 12, 0.68) 0%,
-      rgba(2, 7, 12, 0.26) 48%,
-      rgba(2, 7, 12, 0.04) 100%
-    ),
+    linear-gradient(90deg, rgba(2, 7, 12, 0.68) 0%, rgba(2, 7, 12, 0.26) 48%, rgba(2, 7, 12, 0.04) 100%),
     linear-gradient(0deg, rgba(3, 8, 13, 0.45), transparent 32%);
 }
 .hero-light {
@@ -4543,8 +4432,7 @@ p {
 }
 .hero-emblem img,
 .mobile-emblem img {
-  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.45))
-    drop-shadow(0 0 20px rgba(226, 181, 102, 0.25));
+  filter: drop-shadow(0 8px 30px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 20px rgba(226, 181, 102, 0.25));
 }
 .hero h1 {
   font-weight: 400;
@@ -4836,5 +4724,48 @@ p {
 @media (max-width: 700px) {
   .universe-stage {
     margin-top: 0;
+  }
+}
+
+/* 余白：セクションの上下・左右を広げ、ゆとりを持たせる */
+@media (min-width: 851px) {
+  .section {
+    padding: 170px 10vw;
+  }
+  .about {
+    padding-bottom: 0;
+  }
+  .events {
+    padding-top: 160px;
+    padding-bottom: 175px;
+  }
+  .contact {
+    padding-top: 190px;
+    padding-bottom: 190px;
+  }
+  .recruit-teaser {
+    padding: 150px 10vw;
+  }
+  body .bom-gallery {
+    padding: 140px 10vw;
+  }
+  .section-head {
+    margin-bottom: 92px;
+  }
+}
+@media (max-width: 850px) {
+  .section {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+  .about {
+    padding-bottom: 0;
+  }
+  .recruit-teaser {
+    padding-top: 112px;
+    padding-bottom: 112px;
+  }
+  .section-head {
+    margin-bottom: 56px;
   }
 }

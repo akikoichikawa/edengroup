@@ -705,12 +705,7 @@ p {
   letter-spacing: 0.12em;
 }
 .representative .hero:after {
-  background: linear-gradient(
-    90deg,
-    rgba(3, 8, 13, 0.94),
-    rgba(3, 8, 13, 0.67) 52%,
-    rgba(3, 8, 13, 0.24)
-  );
+  background: linear-gradient(90deg, rgba(3, 8, 13, 0.94), rgba(3, 8, 13, 0.67) 52%, rgba(3, 8, 13, 0.24));
 }
 .representative .cards {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -851,4 +846,25 @@ p {
 /* 文字組み：キャッチコピーの字間を詰める */
 .hero .jp {
   letter-spacing: 0.08em;
+}
+
+/* 余白：セクションの上下・左右を広げ、ゆとりを持たせる */
+@media (min-width: 851px) {
+  .section {
+    padding: 165px 10vw;
+  }
+  .contact {
+    padding-top: 150px;
+    padding-bottom: 160px;
+  }
+  .hero {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+@media (max-width: 850px) {
+  .section {
+    padding-top: 105px;
+    padding-bottom: 105px;
+  }
 }
