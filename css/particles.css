@@ -1,0 +1,18 @@
+/* =========================================================
+   背景モーション：金の粒子（js/particles.js で描画）
+   使い方：セクションに class="has-particles" を付け、
+   先頭に <canvas class="gold-dust" aria-hidden="true"></canvas> を置く
+   ========================================================= */
+.has-particles {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.gold-dust {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}

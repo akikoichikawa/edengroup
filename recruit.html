@@ -34,7 +34,7 @@
     <meta name="application-name" content="EDEN Group" />
     <meta name="apple-mobile-web-app-title" content="EDEN Group" />
     <link rel="stylesheet" href="css/motion.css" />
-    <link rel="stylesheet" href="css/flow.css" />
+    <link rel="stylesheet" href="css/particles.css" />
   </head>
   <body>
     <header class="header">
@@ -117,19 +117,8 @@
           </article>
         </div>
       </section>
-      <section class="contact has-flow" id="contact" aria-labelledby="contact-title">
-        <div class="bg-flow" aria-hidden="true">
-          <svg class="flow-1" viewBox="0 0 2880 400" preserveAspectRatio="none">
-            <path d="M0 200 C 360 110, 1080 290, 1440 200 C 1800 110, 2520 290, 2880 200" />
-            <path d="M0 232 C 360 162, 1080 302, 1440 232 C 1800 162, 2520 302, 2880 232" /></svg
-          ><svg class="flow-2" viewBox="0 0 2880 400" preserveAspectRatio="none">
-            <path d="M0 262 C 360 382, 1080 142, 1440 262 C 1800 382, 2520 142, 2880 262" />
-            <path d="M0 150 C 360 100, 1080 200, 1440 150 C 1800 100, 2520 200, 2880 150" /></svg
-          ><svg class="flow-3" viewBox="0 0 2880 400" preserveAspectRatio="none">
-            <path d="M0 306 C 360 246, 1080 366, 1440 306 C 1800 246, 2520 366, 2880 306" />
-            <path d="M0 118 C 360 218, 1080 18, 1440 118 C 1800 218, 2520 18, 2880 118" />
-          </svg>
-        </div>
+      <section class="contact has-particles" id="contact" aria-labelledby="contact-title">
+        <canvas class="gold-dust" aria-hidden="true"></canvas>
         <div class="contact-inner">
           <div data-reveal>
             <div class="kicker">JOIN EDEN GROUP</div>
@@ -147,5 +136,6 @@
     <footer class="footer"><span>© EDEN Group. All rights reserved.</span><a href="index.html">EDEN GROUP</a></footer>
     <script src="js/site.js"></script>
     <script src="js/motion.js" defer></script>
+    <script src="js/particles.js" defer></script>
   </body>
 </html>
