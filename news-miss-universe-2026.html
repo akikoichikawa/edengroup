@@ -39,6 +39,7 @@
     <meta name="apple-mobile-web-app-title" content="EDEN Group" />
     <link rel="stylesheet" href="css/editorial.css" />
     <link rel="stylesheet" href="css/motion.css" />
+    <link rel="stylesheet" href="css/particles.css" />
   </head>
   <body class="news-article-page">
     <header class="header">
@@ -51,7 +52,8 @@
       </nav>
     </header>
     <main>
-      <article class="news-article">
+      <article class="news-article has-particles">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
         <div class="editorial-kicker">NEWS / EDEN PRODUCTION</div>
         <div class="news-meta"><span>2026</span><span>MISS UNIVERSE JAPAN</span></div>
         <h1 id="hero-title">
@@ -82,11 +84,13 @@
         <a class="article-back" href="index.html#news">ニュース・トピックスに戻る</a>
       </article>
     </main>
-    <footer class="footer">
+    <footer class="footer has-particles">
+      <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
       <a href="index.html">EDEN GROUP ↗</a><a href="#hero-title">BACK TO TOP ↑</a
       ><small>© EDEN Group. All rights reserved.</small>
     </footer>
     <script src="js/site.js"></script>
     <script src="js/motion.js" defer></script>
+    <script src="js/particles.js" defer></script>
   </body>
 </html>
