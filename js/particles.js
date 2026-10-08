@@ -41,17 +41,17 @@
 
     const makeParticle = (anywhere) => {
       const roll = Math.random();
-      const type = roll < 0.1 ? "bokeh" : roll < 0.19 ? "star" : "dust";
+      const type = roll < 0.1 ? "bokeh" : roll < 0.16 ? "star" : "dust";
       return {
         type,
         x: rand(0, width),
         y: anywhere ? rand(0, height) : height + rand(0, 40),
-        r: type === "bokeh" ? rand(4, 9) : type === "star" ? rand(4, 8.5) : rand(0.8, 2.4),
+        r: type === "bokeh" ? rand(4, 9) : type === "star" ? rand(3.5, 7) : rand(0.8, 2.4),
         vy: type === "bokeh" ? rand(0.08, 0.2) : rand(0.15, 0.45),
         drift: rand(0.2, 0.7),
         phase: rand(0, Math.PI * 2),
         twinkle: type === "star" ? rand(0.02, 0.045) : rand(0.015, 0.04),
-        alpha: type === "bokeh" ? rand(0.1, 0.22) : type === "star" ? rand(0.55, 0.8) : rand(0.35, 0.9),
+        alpha: type === "bokeh" ? rand(0.1, 0.22) : type === "star" ? rand(0.4, 0.65) : rand(0.35, 0.9),
       };
     };
 
