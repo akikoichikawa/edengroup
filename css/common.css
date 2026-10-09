@@ -169,3 +169,86 @@
     letter-spacing: 0.08em;
   }
 }
+
+/* ---------- メニュー：COMPANIES のサブメニュー ---------- */
+.nav-group {
+  position: relative;
+}
+.nav-caret {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-left: 8px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  vertical-align: 0.25em;
+  transform: rotate(45deg);
+}
+.nav-group__label {
+  white-space: nowrap;
+}
+.nav-group.is-current > .nav-group__label {
+  color: #d9b77d;
+}
+.nav .nav-group__menu a:after {
+  display: none;
+}
+@media (min-width: 1081px) {
+  .nav-group__menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    min-width: 230px;
+    padding: 14px 0;
+    margin-top: 18px;
+    background: #080d13;
+    border: 1px solid rgba(198, 170, 121, 0.3);
+    transform: translateX(-50%);
+    visibility: hidden;
+  }
+  /* マウスを乗せた時・キーボードで選んだ時に開く */
+  .nav-group:hover .nav-group__menu,
+  .nav-group:focus-within .nav-group__menu {
+    visibility: visible;
+  }
+  /* メニューとの間の隙間でも閉じないように */
+  .nav-group__menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    height: 20px;
+  }
+  .nav .nav-group__menu a {
+    display: block;
+    padding: 10px 24px;
+    font-size: 11px;
+    white-space: nowrap;
+    color: #e6e3dc;
+  }
+  .nav .nav-group__menu a:hover,
+  .nav .nav-group__menu a[aria-current="page"] {
+    color: #d9b77d;
+  }
+}
+/* スマホ・タブレット（MENUボタンで開くメニュー）：会社名を字下げして常に表示 */
+@media (max-width: 1080px) {
+  .nav-caret {
+    display: none;
+  }
+  .nav-group__menu {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 0 6px 16px;
+    border-left: 1px solid rgba(198, 170, 121, 0.3);
+    margin-left: 2px;
+  }
+  .nav .nav-group__menu a {
+    font-size: 12px;
+    color: #c9c6be;
+  }
+  .nav .nav-group__menu a[aria-current="page"] {
+    color: #d9b77d;
+  }
+}
