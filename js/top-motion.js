@@ -1,13 +1,9 @@
 (() => {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   document.body.classList.add("motion-ready");
-  document
-    .querySelectorAll(".profile-panel dl>div")
-    .forEach((row, i) => row.style.setProperty("--row", i));
+  document.querySelectorAll(".profile-panel dl>div").forEach((row, i) => row.style.setProperty("--row", i));
   const links = [...document.querySelectorAll('.nav a[href^="#"]')];
-  const sections = links
-    .map((link) => document.querySelector(link.getAttribute("href")))
-    .filter(Boolean);
+  const sections = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
   const layers = [...document.querySelectorAll(".business-card .card-media,.vision-image")];
   const activeLayers = new Set();
   const viewport = new IntersectionObserver(
@@ -23,8 +19,7 @@
   const update = () => {
     frame = 0;
     let current = "";
-    for (const section of sections)
-      if (section.getBoundingClientRect().top < innerHeight * 0.4) current = section.id;
+    for (const section of sections) if (section.getBoundingClientRect().top < innerHeight * 0.4) current = section.id;
     links.forEach((link) => {
       const active = link.getAttribute("href") === "#" + current;
       link.classList.toggle("active", active);
@@ -34,20 +29,14 @@
     if (reduced.matches) return;
     activeLayers.forEach((layer) => {
       const rect = layer.parentElement.getBoundingClientRect();
-      const depth = Math.max(
-        -22,
-        Math.min(22, (innerHeight / 2 - rect.top - rect.height / 2) * 0.045),
-      );
+      const depth = Math.max(-22, Math.min(22, (innerHeight / 2 - rect.top - rect.height / 2) * 0.045));
       layer.style.setProperty("--depth", depth.toFixed(1) + "px");
     });
-    const footer = document.querySelector(".footer-display");
+    const footer = document.querySelector(".site-footer__display");
     if (footer) {
       const rect = footer.getBoundingClientRect();
       if (rect.top < innerHeight)
-        footer.style.setProperty(
-          "--footer-shift",
-          Math.max(0, Math.min(24, (rect.top / innerHeight) * 24)) + "px",
-        );
+        footer.style.setProperty("--footer-shift", Math.max(0, Math.min(24, (rect.top / innerHeight) * 24)) + "px");
     }
   };
   const schedule = () => {
@@ -59,9 +48,7 @@
     layers.forEach((layer) => layer.style.removeProperty("--depth"));
     schedule();
   });
-  document.addEventListener("visibilitychange", () =>
-    document.body.classList.toggle("motion-paused", document.hidden),
-  );
+  document.addEventListener("visibilitychange", () => document.body.classList.toggle("motion-paused", document.hidden));
   update();
 })();
 
@@ -88,8 +75,7 @@
     if (reduced.matches) return;
     if (hero) {
       const r = hero.getBoundingClientRect();
-      if (r.bottom > 0)
-        hero.style.setProperty("--hero-depth", Math.min(65, Math.max(0, -r.top * 0.12)) + "px");
+      if (r.bottom > 0) hero.style.setProperty("--hero-depth", Math.min(65, Math.max(0, -r.top * 0.12)) + "px");
     }
     if (vision) {
       const r = vision.getBoundingClientRect();
@@ -116,11 +102,7 @@
   reduced.addEventListener("change", () => {
     [hero, vision, photo]
       .filter(Boolean)
-      .forEach((el) =>
-        ["--hero-depth", "--vision-depth", "--photo-depth"].forEach((k) =>
-          el.style.removeProperty(k),
-        ),
-      );
+      .forEach((el) => ["--hero-depth", "--vision-depth", "--photo-depth"].forEach((k) => el.style.removeProperty(k)));
     request();
   });
   if (group && matchMedia("(pointer:fine)").matches)
@@ -152,13 +134,9 @@
     universe
       .querySelectorAll(".eden-satellite")
       .forEach((el, i) => el.style.setProperty("--arrival", `${220 + i * 110}ms`));
-    universe
-      .querySelectorAll(".future-mark")
-      .forEach((el, i) => el.style.setProperty("--arrival", `${i * 900}ms`));
+    universe.querySelectorAll(".future-mark").forEach((el, i) => el.style.setProperty("--arrival", `${i * 900}ms`));
   }
-  const observed = document.querySelectorAll(
-    ".hero,.eden-universe,.events-photo,.business-card.venture",
-  );
+  const observed = document.querySelectorAll(".hero,.eden-universe,.events-photo,.business-card.venture");
   const observer = new IntersectionObserver(
     (entries) =>
       entries.forEach((entry) => {

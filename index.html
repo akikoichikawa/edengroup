@@ -67,18 +67,20 @@
     <link rel="stylesheet" href="css/editorial.css" />
     <link rel="stylesheet" href="css/films.css" />
     <link rel="stylesheet" href="css/motion.css" />
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/particles.css" />
   </head>
   <body>
     <div class="progress" aria-hidden="true"></div>
     <header class="header" id="top">
-      <a class="brand" href="#top" aria-label="EDEN Group ホーム"
+      <a class="brand" href="#top" aria-label="EDEN Group トップへ"
         ><span class="brand-mark" aria-hidden="true"></span><span>EDEN<small>GROUP</small></span></a
       >
       <button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
       <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
-        <a href="#about">ABOUT</a><a href="#news">NEWS</a><a href="#business">BUSINESS</a><a href="#events">EVENTS</a
-        ><a href="#group">GROUP</a><a href="recruit.html">RECRUIT</a><a class="nav-contact" href="#contact">CONTACT</a>
+        <a href="#about">ABOUT</a><a href="#business">BUSINESS</a><a href="eden-bank.html">EDEN BANK</a
+        ><a href="eden-production.html">EDEN PRODUCTION</a><a href="representative.html">MESSAGE</a
+        ><a href="#news">NEWS</a><a href="recruit.html">RECRUIT</a><a class="nav-contact" href="#contact">CONTACT</a>
       </nav>
     </header>
     <main>
@@ -646,31 +648,32 @@
         </div>
       </section>
     </main>
-    <footer class="footer has-particles">
+    <footer class="site-footer has-particles">
       <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-      <div class="footer-top">
-        <div class="footer-identity">
-          <a class="brand" href="#top"
-            ><span class="brand-mark" aria-hidden="true"></span><span>EDEN<small>GROUP</small></span></a
+      <div class="site-footer__top">
+        <div class="site-footer__identity">
+          <a class="site-footer__brand" href="#top" aria-label="EDEN Group トップへ"
+            ><img src="assets/eden-monogram-transparent.png" alt="" width="1374" height="1145" loading="lazy" /><span
+              >EDEN<small>GROUP</small></span
+            ></a
           >
           <p>価値を見極め、次の可能性へ。<br />福岡を拠点に、7つの事業を展開しています。</p>
         </div>
-        <div class="footer-column">
+        <nav class="site-footer__col" aria-label="サイトマップ">
           <h3>SITEMAP</h3>
-          <a href="#about">ABOUT US</a><a href="#business">BUSINESS</a><a href="eden-bank.html">EDEN BANK</a
-          ><a href="eden-production.html">EDEN PRODUCTION</a><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a
-          ><a href="#news">NEWS / TOPICS</a><a href="#ceo-message">CEO MESSAGE</a
-          ><a href="representative.html">REPRESENTATIVE</a><a href="recruit.html">RECRUIT</a>
-        </div>
-        <div class="footer-column">
+          <a href="#top">HOME</a><a href="eden-bank.html">EDEN BANK</a><a href="eden-production.html">EDEN PRODUCTION</a
+          ><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a><a href="representative.html">MESSAGE</a
+          ><a href="#news">NEWS</a><a href="recruit.html">RECRUIT</a>
+        </nav>
+        <div class="site-footer__col">
           <h3>CONTACT</h3>
           <p>〒810-0074<br />福岡市中央区大手門二丁目2番24号<br />BLAROCK.OTEMON 3階・4階</p>
-          <a class="footer-tel" href="tel:0927535559">092-753-5559 ↗</a><a href="#contact">お問い合わせへ ↗</a>
+          <a class="site-footer__tel" href="tel:0927535559">092-753-5559 ↗</a><a href="#contact">お問い合わせへ ↗</a>
         </div>
       </div>
-      <div class="footer-display" aria-hidden="true">EDEN GROUP</div>
-      <div class="footer-bottom">
-        <span>© EDEN Group. All rights reserved.</span><a class="backtop" href="#top">BACK TO TOP ↑</a>
+      <div class="site-footer__display" aria-hidden="true">EDEN GROUP</div>
+      <div class="site-footer__bottom">
+        <span>© EDEN Group. All rights reserved.</span><a class="site-footer__backtop" href="#">BACK TO TOP ↑</a>
       </div>
     </footer>
     <script src="js/top.js"></script>

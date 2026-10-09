@@ -476,24 +476,6 @@ p {
   background: var(--gold);
   color: #0b1118;
 }
-.footer {
-  border-top: 1px solid var(--line);
-  background: #080d13;
-  padding: 37px clamp(24px, 8vw, 145px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-}
-.footer a {
-  color: #d4b27b;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-}
-.footer small {
-  color: #8a9699;
-  font-size: 11px;
-}
 [data-reveal] {
   opacity: 0;
   transform: translateY(30px);
@@ -629,13 +611,6 @@ p {
   .profile dl > div {
     grid-template-columns: 95px 1fr;
     gap: 12px;
-  }
-  .footer {
-    flex-wrap: wrap;
-    padding: 32px 6vw;
-  }
-  .footer small {
-    width: 100%;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -866,5 +841,32 @@ p {
   .section {
     padding-top: 105px;
     padding-bottom: 105px;
+  }
+}
+/*  メニュー：8項目に増えたため、1080px以下はMENUボタンで開閉  */
+@media (max-width: 1080px) {
+  .menu {
+    display: block;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(7, 12, 18, 0.98);
+    padding: 24px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .nav.open {
+    display: flex;
+  }
+  .nav a {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+  .nav .home {
+    text-align: center;
   }
 }

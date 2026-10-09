@@ -1,0 +1,171 @@
+/* =========================================================
+   全ページ共通（BEST OF MISS FUKUOKA を除く）
+   - 共通フッター（.site-footer）
+   - メニューの現在ページ表示
+   ========================================================= */
+
+/* メニュー：表示中のページ */
+.nav a[aria-current="page"] {
+  color: #d9b77d;
+}
+
+/* ---------- 共通フッター ---------- */
+.site-footer {
+  background: #090f15;
+  color: #f4f2ec;
+  border-top: 1px solid rgba(198, 170, 121, 0.28);
+  font-family: "Noto Sans JP", system-ui, sans-serif;
+  font-weight: 300;
+}
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1.35fr 0.8fr 1fr;
+  gap: 6vw;
+  padding: 90px 10vw 95px;
+  border-bottom: 1px solid rgba(198, 170, 121, 0.28);
+}
+.site-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font:
+    400 30px/1.7 "Cormorant Garamond",
+    Georgia,
+    serif;
+  letter-spacing: 0.16em;
+  color: #d9b77d !important;
+  white-space: nowrap;
+}
+.site-footer__brand img {
+  width: 110px;
+  height: auto;
+}
+.site-footer__brand small {
+  display: block;
+  margin-top: 3px;
+  font:
+    400 10px/1 "Noto Sans JP",
+    sans-serif;
+  letter-spacing: 0.1em;
+  color: #e7c78e;
+}
+.site-footer__identity p {
+  margin: 30px 0 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 2;
+  letter-spacing: 0.08em;
+  color: #afb7b9;
+}
+.site-footer__col h3 {
+  margin: 0 0 25px;
+  font:
+    500 12px "Cormorant Garamond",
+    Georgia,
+    serif;
+  font-variant-numeric: lining-nums;
+  letter-spacing: 0.23em;
+  color: #d2b17b;
+}
+.site-footer__col a {
+  display: block;
+  margin: 0 0 14px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #d2d8d8;
+  transition: color 0.3s;
+}
+.site-footer__col a:hover,
+.site-footer__col a[aria-current="page"] {
+  color: #d9b77d;
+}
+.site-footer__col p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #afb7b9;
+}
+.site-footer__col .site-footer__tel {
+  margin-top: 21px;
+}
+.site-footer__display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(215, 178, 115, 0.13);
+  font:
+    400 19vw/0.8 "Cormorant Garamond",
+    Georgia,
+    serif;
+  letter-spacing: 0.065em;
+  color: rgba(219, 183, 126, 0.21);
+  white-space: nowrap;
+  transform: translateY(var(--footer-shift, 0px));
+  transition: color 0.8s;
+}
+.site-footer__display:hover {
+  color: rgba(219, 183, 126, 0.38);
+}
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 10vw;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #8d9699;
+}
+.site-footer__backtop {
+  font:
+    500 12px "Cormorant Garamond",
+    Georgia,
+    serif;
+  letter-spacing: 0.18em;
+  color: #d6b57b !important;
+}
+@media (max-width: 700px) {
+  .site-footer__top {
+    grid-template-columns: 1fr 1fr;
+    gap: 42px 25px;
+    padding: 65px 6vw;
+  }
+  .site-footer__identity {
+    grid-column: 1 / -1;
+  }
+  .site-footer__brand {
+    font-size: 23px;
+  }
+  .site-footer__brand img {
+    width: 90px;
+  }
+  .site-footer__col h3 {
+    font-size: 10px;
+  }
+  .site-footer__col a,
+  .site-footer__col p {
+    font-size: 12px;
+  }
+  .site-footer__display {
+    font-size: 16vw;
+    padding: 12px 0;
+  }
+  .site-footer__bottom {
+    padding: 22px 6vw;
+  }
+}
+
+/* メニュー：8項目が1行に収まるよう、中間の画面幅では間隔を詰める */
+@media (min-width: 1081px) and (max-width: 1320px) {
+  .header .nav {
+    gap: clamp(16px, 1.9vw, 30px);
+  }
+  .header .nav a {
+    letter-spacing: 0.08em;
+  }
+}

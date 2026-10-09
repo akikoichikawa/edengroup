@@ -17,7 +17,7 @@
     ".profile-panel dl>div",
     ".ceo-message>*",
     ".vision-inner>*",
-    ".footer-column",
+    ".site-footer__col",
     ".winner",
     ".sponsor-tier",
     ".card",
@@ -25,10 +25,7 @@
   ];
   const targets = [...new Set(selectors.flatMap((s) => [...document.querySelectorAll(s)]))];
   targets.forEach(
-    (el, i) =>
-      (el.dataset.motionDetailDelay = String(
-        (Array.from(el.parentElement.children).indexOf(el) % 4) * 85,
-      )),
+    (el, i) => (el.dataset.motionDetailDelay = String((Array.from(el.parentElement.children).indexOf(el) % 4) * 85)),
   );
   const observer = new IntersectionObserver(
     (entries) => {
@@ -76,8 +73,7 @@
   const images = [...document.querySelectorAll(".news-picture img,.statement>img,.hero-photo")];
   const visible = new Set();
   const io = new IntersectionObserver(
-    (entries) =>
-      entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target))),
+    (entries) => entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target))),
     { rootMargin: "60px" },
   );
   images.forEach((el) => io.observe(el));
