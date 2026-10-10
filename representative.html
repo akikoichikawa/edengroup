@@ -47,156 +47,170 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="css/company.css" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="application-name" content="EDEN Group" />
     <meta name="apple-mobile-web-app-title" content="EDEN Group" />
-    <link rel="stylesheet" href="css/editorial.css" />
-    <link rel="stylesheet" href="css/motion.css" />
+    <script>
+      document.documentElement.classList.add("js", "intro-skip", "is-ready");
+    </script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/particles.css" />
   </head>
-  <body class="representative">
-    <header class="header">
+  <body class="page">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">VIEW</span></div>
+    <header class="header" id="top">
       <a class="brand" href="index.html" aria-label="EDEN Group トップへ"
         ><span class="brand-mark" aria-hidden="true"></span><span>EDEN<small>GROUP</small></span></a
-      ><button class="menu" type="button" aria-expanded="false" aria-controls="page-nav">MENU</button>
-      <nav class="nav" id="page-nav" aria-label="メインナビゲーション">
+      >
+      <button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
         <a href="index.html#about">ABOUT</a><a href="index.html#business">BUSINESS</a>
         <div class="nav-group">
-          <a class="nav-group__label" href="index.html#group" aria-haspopup="true">COMPANIES<span class="nav-caret" aria-hidden="true"></span></a>
+          <a class="nav-group__label" href="index.html#group" aria-haspopup="true"
+            >COMPANIES<span class="nav-caret" aria-hidden="true"></span
+          ></a>
           <div class="nav-group__menu">
             <a href="eden-bank.html">EDEN BANK</a><a href="eden-production.html">EDEN PRODUCTION</a
             ><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a>
           </div>
         </div>
         <a href="representative.html" aria-current="page">CEO MESSAGE</a><a href="index.html#news">NEWS</a
-        ><a href="recruit.html">RECRUIT</a><a class="home" href="#contact">CONTACT</a>
+        ><a href="recruit.html">RECRUIT</a><a class="nav-contact" href="#contact">CONTACT</a>
       </nav>
     </header>
     <main>
-      <section class="hero has-particles particles-over" aria-labelledby="hero-title" data-density="0.6">
+      <section class="page-hero has-particles particles-over" data-density="0.5" aria-labelledby="page-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="hero-inner">
-          <div class="kicker">REPRESENTATIVE</div>
-          <h1 id="hero-title">田中 弘樹</h1>
-          <div class="jp">代表取締役</div>
-          <p>
+        <div class="page-hero-media" aria-hidden="true">
+          <img src="assets/hero-tower-sharp.png" alt="" data-parallax />
+        </div>
+        <div class="page-hero-shade" aria-hidden="true"></div>
+        <div class="page-hero-inner" data-reveal>
+          <nav class="crumbs" aria-label="現在の位置">
+            <a href="index.html">Home</a><span aria-hidden="true">/</span><span>CEO Message</span>
+          </nav>
+          <p class="eyebrow">Representative</p>
+          <h1 class="page-title page-title-jp" id="page-title">
+            <span class="line"><span>田中 弘樹</span></span>
+          </h1>
+          <p class="page-catch">代表取締役</p>
+          <p class="page-lead">
             株式会社EDEN BANK、株式会社EDEN PRODUCTIONの代表を務める田中
             弘樹。福岡を拠点に、リユース・買取・卸から、ミスコン・ライバー・イベントまで多様な事業を展開しています。
           </p>
         </div>
-        <div class="hero-bottom"><span>HIROKI TANAKA</span></div>
+        <div class="page-hero-tags" aria-hidden="true"><span>Hiroki Tanaka</span></div>
       </section>
-      <section class="section ceo-message has-particles" id="ceo-message" aria-labelledby="ceo-title">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="ceo-layout" data-reveal>
-          <div class="ceo-brand">
-            <div class="editorial-kicker">CEO MESSAGE</div>
-            <img src="assets/eden-monogram-transparent.png" alt="" width="1374" height="1145" loading="lazy" /><span
-              >EDEN GROUP</span
-            >
-          </div>
-          <div class="ceo-copy">
-            <h2 id="ceo-title"><span>価値を見極め、</span><span>可能性を広げる。</span></h2>
-            <div class="ceo-body">
-              <p>
-                ものが持つ価値を、人が持つ可能性を、次の未来へつなぐ。それが、私たちEDEN Groupの事業に共通する想いです。
-              </p>
-              <p>私たちは福岡を拠点に、異なる分野の専門性を磨き、一つひとつの事業に誠実に向き合っています。</p>
-              <p>
-                目指すのは、規模とともに信頼が積み重なる企業。変化を恐れず挑戦を続け、関わる人々が誇りを持てるグループへと成長してまいります。
-              </p>
-            </div>
-            <div class="ceo-signature">
-              <span>代表取締役</span><strong>田中 弘樹</strong><small>HIROKI TANAKA</small>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="section intro has-particles" id="about">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
 
-        <div data-reveal>
-          <div class="section-kicker">Representative</div>
-          <h2 class="section-title">田中 弘樹について</h2>
-        </div>
-        <div data-reveal>
-          <p>
-            株式会社EDEN BANKと株式会社EDEN
-            PRODUCTIONの代表取締役。リユース・買取・卸・不動産から、ミスコン・ライバー・イベントまで、両社の事業を率いています。
-          </p>
+      <section class="ceo has-particles" id="ceo-message" aria-labelledby="ceo-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="ceo-inner" data-reveal>
+          <p class="eyebrow">CEO Message</p>
+          <h2 class="ceo-title" id="ceo-title">
+            <span class="line"><span>価値を見極め、</span></span
+            ><span class="line"><span>可能性を広げる。</span></span>
+          </h2>
+          <div class="ceo-body">
+            <p>
+              ものが持つ価値を、人が持つ可能性を、次の未来へつなぐ。それが、私たちEDEN Groupの事業に共通する想いです。
+            </p>
+            <p>私たちは福岡を拠点に、異なる分野の専門性を磨き、一つひとつの事業に誠実に向き合っています。</p>
+            <p>
+              目指すのは、規模とともに信頼が積み重なる企業。変化を恐れず挑戦を続け、関わる人々が誇りを持てるグループへと成長してまいります。
+            </p>
+          </div>
+          <div class="ceo-sign"><span>代表取締役</span><strong>田中 弘樹</strong></div>
         </div>
       </section>
-      <section class="section business has-particles" id="business" aria-labelledby="companies-title">
+
+      <section class="statement has-particles" id="about" aria-labelledby="about-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="business-head" data-reveal>
-          <div>
-            <div class="section-kicker">Companies</div>
-            <h2 class="section-title" id="companies-title">グループ会社</h2>
-          </div>
+        <div class="statement-head" data-reveal>
+          <p class="eyebrow">Profile</p>
+          <h2 class="visually-hidden" id="about-title">田中 弘樹について</h2>
         </div>
-        <div class="cards">
-          <article class="card" data-reveal>
-            <div class="photo"><img src="assets/business-reuse.jpg" alt="リユース事業のイメージ" loading="lazy" /></div>
-            <div class="text">
-              <h3>EDEN BANK</h3>
-              <div class="jp">株式会社EDEN BANK</div>
-              <p>リユース、卸、不動産、買取の各事業を展開。<a href="eden-bank.html">会社ページを見る ↗</a></p>
+        <p class="statement-text" data-words>
+          株式会社EDEN BANKと株式会社EDEN
+          PRODUCTIONの代表取締役。リユース・買取・卸・不動産から、ミスコン・ライバー・イベントまで、両社の事業を率いています。
+        </p>
+      </section>
+
+      <section class="related has-particles" id="business" aria-labelledby="business-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Companies</p>
+          <h2 class="sec-title" id="business-title">
+            <span class="display-en">Two Companies</span><span class="sec-jp">グループ会社</span>
+          </h2>
+        </div>
+        <div class="company-grid">
+          <a class="company" href="eden-bank.html" data-reveal>
+            <span class="company-media"><img src="assets/business-realestate.jpg" alt="" loading="lazy" /></span>
+            <span class="company-body">
+              <span class="company-num">01</span>
+              <span class="company-name">EDEN BANK</span>
+              <span class="company-jp">株式会社EDEN BANK</span>
+              <span class="company-desc">リユース・卸・不動産・買取</span>
+              <span class="company-more">会社ページへ ↗</span>
+            </span>
+          </a>
+          <a class="company" href="eden-production.html" data-reveal>
+            <span class="company-media"><img src="assets/pageant-stage-editorial.png" alt="" loading="lazy" /></span>
+            <span class="company-body">
+              <span class="company-num">02</span>
+              <span class="company-name">EDEN PRODUCTION</span>
+              <span class="company-jp">株式会社EDEN PRODUCTION</span>
+              <span class="company-desc">ミスコン・イベント・ライバー</span>
+              <span class="company-more">会社ページへ ↗</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section class="profile-sec has-particles" id="company" aria-labelledby="company-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="profile" data-reveal>
+          <h2 class="profile-title" id="company-title"><span class="eyebrow">Profile</span>基本情報</h2>
+          <dl>
+            <div>
+              <dt>氏名</dt>
+              <dd>田中 弘樹</dd>
             </div>
-          </article>
-          <article class="card" data-reveal>
-            <div class="photo"><img src="assets/business-pageant.jpg" alt="ステージのイメージ" loading="lazy" /></div>
-            <div class="text">
-              <h3 class="is-long">EDEN PRODUCTION</h3>
-              <div class="jp">株式会社EDEN PRODUCTION</div>
-              <p>
-                ベスト・オブ・ミス福岡、ライバー事務所oneself、イベント事業を展開。<a href="eden-production.html"
-                  >会社ページを見る ↗</a
+            <div>
+              <dt>役職</dt>
+              <dd>代表取締役</dd>
+            </div>
+            <div>
+              <dt>会社</dt>
+              <dd>
+                <a href="eden-bank.html">株式会社EDEN BANK ↗</a><br /><a href="eden-production.html"
+                  >株式会社EDEN PRODUCTION ↗</a
                 >
-              </p>
+              </dd>
             </div>
-          </article>
+            <div>
+              <dt>拠点</dt>
+              <dd>福岡県福岡市</dd>
+            </div>
+          </dl>
         </div>
       </section>
-      <section class="section profile has-particles" id="company" aria-labelledby="profile-title">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div data-reveal>
-          <div class="section-kicker">Profile</div>
-          <h2 class="section-title" id="profile-title">基本情報</h2>
-        </div>
-        <dl data-reveal>
-          <div>
-            <dt>氏名</dt>
-            <dd>田中 弘樹</dd>
-          </div>
-          <div>
-            <dt>役職</dt>
-            <dd>代表取締役</dd>
-          </div>
-          <div>
-            <dt>会社</dt>
-            <dd>
-              <a href="eden-bank.html">株式会社EDEN BANK ↗</a><br /><a href="eden-production.html"
-                >株式会社EDEN PRODUCTION ↗</a
-              >
-            </dd>
-          </div>
-          <div>
-            <dt>拠点</dt>
-            <dd>福岡県福岡市</dd>
-          </div>
-        </dl>
-      </section>
+
       <section class="contact has-particles" id="contact" aria-labelledby="contact-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-
-        <div class="section-kicker">Contact</div>
-        <h2 id="contact-title">お問い合わせ</h2>
-        <p>事業に関するご相談・お問い合わせはお電話でご連絡ください。</p>
-        <a class="phone" href="tel:0927535559">092-753-5559 ↗</a>
+        <div class="contact-inner" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 class="contact-title" id="contact-title">
+            <span class="display-en">Get in touch</span><span class="sec-jp">お問い合わせ</span>
+          </h2>
+          <p class="contact-text">事業に関するご相談・お問い合わせは、お電話でご連絡ください。</p>
+          <a class="contact-tel" href="tel:0927535559" data-magnetic><span>092-753-5559</span></a>
+        </div>
       </section>
     </main>
     <footer class="site-footer has-particles">
@@ -228,8 +242,8 @@
         <span>© EDEN Group. All rights reserved.</span><a class="site-footer__backtop" href="#">BACK TO TOP ↑</a>
       </div>
     </footer>
-    <script src="js/site.js"></script>
-    <script src="js/motion.js" defer></script>
+    <script src="js/vendor/lenis.min.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script src="js/particles.js" defer></script>
   </body>
 </html>

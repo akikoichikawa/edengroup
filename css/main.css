@@ -1890,3 +1890,9 @@ a.biz-row:hover .biz-en {
     height: clamp(56px, 9vh, 90px);
   }
 }
+
+/* 英字見出し：単語の途中で折り返さない */
+.display-en .word {
+  display: inline-block;
+  white-space: nowrap;
+}

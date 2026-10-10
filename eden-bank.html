@@ -40,157 +40,217 @@
         }
       }
     </script>
-    <link rel="stylesheet" href="css/company.css" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="application-name" content="EDEN Group" />
     <meta name="apple-mobile-web-app-title" content="EDEN Group" />
-    <link rel="stylesheet" href="css/motion.css" />
+    <script>
+      document.documentElement.classList.add("js", "intro-skip", "is-ready");
+    </script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/particles.css" />
   </head>
-  <body class="bank">
-    <header class="header">
+  <body class="page">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">VIEW</span></div>
+    <header class="header" id="top">
       <a class="brand" href="index.html" aria-label="EDEN Group トップへ"
-        ><span class="brand-mark" aria-hidden="true"></span><span>EDEN<small>BANK</small></span></a
-      ><button class="menu" type="button" aria-expanded="false" aria-controls="bank-nav">MENU</button>
-      <nav class="nav" id="bank-nav" aria-label="メインナビゲーション">
+        ><span class="brand-mark" aria-hidden="true"></span><span>EDEN<small>GROUP</small></span></a
+      >
+      <button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
         <a href="index.html#about">ABOUT</a><a href="index.html#business">BUSINESS</a>
         <div class="nav-group is-current">
-          <a class="nav-group__label" href="index.html#group" aria-haspopup="true">COMPANIES<span class="nav-caret" aria-hidden="true"></span></a>
+          <a class="nav-group__label" href="index.html#group" aria-haspopup="true"
+            >COMPANIES<span class="nav-caret" aria-hidden="true"></span
+          ></a>
           <div class="nav-group__menu">
             <a href="eden-bank.html" aria-current="page">EDEN BANK</a><a href="eden-production.html">EDEN PRODUCTION</a
             ><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a>
           </div>
         </div>
         <a href="representative.html">CEO MESSAGE</a><a href="index.html#news">NEWS</a><a href="recruit.html">RECRUIT</a
-        ><a class="home" href="#contact">CONTACT</a>
+        ><a class="nav-contact" href="#contact">CONTACT</a>
       </nav>
     </header>
     <main>
-      <section class="hero has-particles particles-over" aria-labelledby="hero-title" data-density="0.6">
+      <section class="page-hero has-particles particles-over" data-density="0.5" aria-labelledby="page-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="hero-inner">
-          <div class="kicker">EDEN GROUP</div>
-          <h1 id="hero-title">EDEN<br />BANK</h1>
-          <div class="jp">
-            <span class="tagline-phrase">価値を見つけ、</span><span class="tagline-phrase">次へつなぐ。</span>
-          </div>
-          <p>株式会社EDEN BANKは、福岡を拠点にリユース、卸、不動産、買取の4事業を展開しています。</p>
-          <a class="explore" href="#business">事業を見る</a>
+        <div class="page-hero-media" aria-hidden="true">
+          <img src="assets/business-reuse.jpg" alt="" data-parallax />
         </div>
-        <div class="hero-bottom"><span>REUSE / WHOLESALE / REAL ESTATE / BUYBACK</span></div>
+        <div class="page-hero-shade" aria-hidden="true"></div>
+        <div class="page-hero-inner" data-reveal>
+          <nav class="crumbs" aria-label="現在の位置">
+            <a href="index.html">Home</a><span aria-hidden="true">/</span><span>Companies</span
+            ><span aria-hidden="true">/</span><span>EDEN BANK</span>
+          </nav>
+          <p class="eyebrow">Group Company 01</p>
+          <h1 class="page-title" id="page-title"><span class="display-en">EDEN BANK</span></h1>
+          <p class="page-catch">価値を見つけ、次へつなぐ。</p>
+          <p class="page-lead">株式会社EDEN BANKは、福岡を拠点にリユース、卸、不動産、買取の4事業を展開しています。</p>
+        </div>
+        <div class="page-hero-tags" aria-hidden="true">
+          <span>Reuse</span><span>Wholesale</span><span>Real Estate</span><span>Buyback</span>
+        </div>
       </section>
-      <section class="section intro has-particles" id="about">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
 
-        <div data-reveal>
-          <div class="section-kicker">About us</div>
-          <h2 class="section-title">4つの事業を、<br />福岡から。</h2>
-        </div>
-        <div data-reveal>
-          <p>
-            価値あるものを必要な人へつなぐリユース。美容商材などの流通を支える卸。不動産の保有と投資。大切な品物と向き合う買取。4つの事業を展開しています。
-          </p>
-        </div>
-      </section>
-      <section class="section business has-particles" id="business" aria-labelledby="business-title">
+      <section class="statement has-particles" id="about" aria-labelledby="about-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="business-head" data-reveal>
-          <div>
-            <div class="section-kicker">Our business</div>
-            <h2 class="section-title" id="business-title">事業領域</h2>
-          </div>
+        <div class="statement-head" data-reveal>
+          <p class="eyebrow">About us</p>
+          <h2 class="visually-hidden" id="about-title">EDEN BANKについて</h2>
         </div>
-        <div class="cards">
-          <article class="card" data-reveal>
-            <div class="photo">
-              <img src="assets/business-reuse.jpg" alt="腕時計とジュエリーのイメージ" loading="lazy" />
-            </div>
-            <div class="text">
-              <h3>REUSE</h3>
-              <div class="jp">リユース事業</div>
-              <p>品物の価値を見極め、次に必要とする人のもとへ届けます。</p>
-            </div>
-          </article>
-          <article class="card" data-reveal>
-            <div class="photo">
-              <img src="assets/business-wholesale.jpg" alt="美容商材の流通イメージ" loading="lazy" />
-            </div>
-            <div class="text">
-              <h3>WHOLESALE</h3>
-              <div class="jp">卸事業</div>
-              <p>美容商材を中心に、商品の流通を支える卸売事業を展開しています。</p>
-            </div>
-          </article>
-          <article class="card" data-reveal>
-            <div class="photo"><img src="assets/business-realestate.jpg" alt="不動産のイメージ" loading="lazy" /></div>
-            <div class="text">
-              <h3>REAL ESTATE</h3>
-              <div class="jp">不動産事業</div>
-              <p>不動産の保有と投資を行い、長期的な資産形成に取り組んでいます。</p>
-            </div>
-          </article>
-          <article class="card" data-reveal>
-            <div class="photo">
-              <img src="assets/business-buyback.jpg" alt="品物を査定する手元のイメージ" loading="lazy" />
-            </div>
-            <div class="text">
-              <h3>BUYBACK</h3>
-              <div class="jp">買取事業</div>
-              <p>買取大吉を複数店舗運営。お客様の大切な品物と向き合います。</p>
-            </div>
-          </article>
-        </div>
+        <p class="statement-text" data-words>
+          価値あるものを必要な人へつなぐリユース。美容商材などの流通を支える卸。不動産の保有と投資。大切な品物と向き合う買取。4つの事業を、福岡から展開しています。
+        </p>
       </section>
-      <section class="section stores has-particles" aria-labelledby="stores-title">
+
+      <section class="biz has-particles" id="business" aria-labelledby="business-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div data-reveal>
-          <div class="section-kicker">Buyback Stores</div>
-          <h2 class="section-title" id="stores-title">買取店舗</h2>
-          <p>買取大吉を複数店舗運営しています。各店舗で、お客様の品物と丁寧に向き合います。</p>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Our business</p>
+          <h2 class="sec-title" id="business-title">
+            <span class="display-en">Four Fields</span><span class="sec-jp">事業領域</span>
+          </h2>
         </div>
-        <div class="store-list" data-reveal>
-          <div><b>買取大吉</b><span>複数店舗運営</span></div>
-        </div>
+        <ol class="biz-list">
+          <li style="--tone-l: #a8f2d8; --tone: #3fbf96; --tone-d: #14614b">
+            <div class="biz-row" data-img="assets/business-reuse.jpg" data-reveal>
+              <span class="biz-num">01</span>
+              <span class="biz-name"><span class="biz-en">Reuse</span><span class="biz-jp">リユース事業</span></span>
+              <span class="biz-desc">品物の価値を見極め、次に必要とする人のもとへ届けます。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-reuse.jpg" alt="" loading="lazy" />
+            </div>
+          </li>
+          <li style="--tone-l: #c2e0ff; --tone: #4f9be8; --tone-d: #1b4a8a">
+            <div class="biz-row" data-img="assets/business-wholesale.jpg" data-reveal>
+              <span class="biz-num">02</span>
+              <span class="biz-name"><span class="biz-en">Wholesale</span><span class="biz-jp">卸事業</span></span>
+              <span class="biz-desc">美容商材を中心に、商品の流通を支える卸売事業を展開しています。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-wholesale.jpg" alt="" loading="lazy" />
+            </div>
+          </li>
+          <li style="--tone-l: #f7f9fc; --tone: #c3cad6; --tone-d: #687183">
+            <div class="biz-row" data-img="assets/business-realestate.jpg" data-reveal>
+              <span class="biz-num">03</span>
+              <span class="biz-name"
+                ><span class="biz-en">Real Estate</span><span class="biz-jp">不動産事業</span></span
+              >
+              <span class="biz-desc">不動産の保有と投資を行い、長期的な資産形成に取り組んでいます。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-realestate.jpg" alt="" loading="lazy" />
+            </div>
+          </li>
+          <li style="--tone-l: #dcf7ac; --tone: #8cc65a; --tone-d: #3b6a25">
+            <a class="biz-row" data-img="assets/business-buyback.jpg" href="#stores" data-reveal>
+              <span class="biz-num">04</span>
+              <span class="biz-name"><span class="biz-en">Buyback</span><span class="biz-jp">買取事業</span></span>
+              <span class="biz-desc">買取大吉を複数店舗運営。お客様の大切な品物と向き合います。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-buyback.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+        </ol>
+        <div class="biz-float" aria-hidden="true"><img src="assets/business-reuse.jpg" alt="" /></div>
       </section>
-      <section class="section profile has-particles" id="company" aria-labelledby="company-title">
+
+      <section class="feature has-particles" id="stores" aria-labelledby="stores-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div data-reveal>
-          <div class="section-kicker">Company</div>
-          <h2 class="section-title" id="company-title">会社概要</h2>
+        <div class="feature-grid">
+          <div data-reveal>
+            <p class="eyebrow">Buyback Stores</p>
+            <h2 class="feature-name" id="stores-title">買取大吉<small>複数店舗運営</small></h2>
+            <p class="feature-text" style="margin-top: 36px">
+              買取大吉を複数店舗運営しています。各店舗で、お客様の品物と丁寧に向き合います。
+            </p>
+          </div>
+          <figure class="feature-photo" data-clip>
+            <img src="assets/business-buyback.jpg" alt="品物を査定する手元" loading="lazy" />
+          </figure>
         </div>
-        <dl data-reveal>
-          <div>
-            <dt>会社名</dt>
-            <dd>株式会社EDEN BANK<br />（エデンバンク）</dd>
-          </div>
-          <div>
-            <dt>代表取締役</dt>
-            <dd><a href="representative.html">田中 弘樹 ↗</a></dd>
-          </div>
-          <div>
-            <dt>事業領域</dt>
-            <dd>リユース事業 / 卸事業 / 不動産事業 / 買取事業</dd>
-          </div>
-          <div>
-            <dt>所在地</dt>
-            <dd>〒810-0074<br />福岡市中央区大手門二丁目2番24号<br />BLAROCK.OTEMON 3階・4階</dd>
-          </div>
-          <div>
-            <dt>グループ</dt>
-            <dd><a href="index.html#group">EDEN Group ↗</a></dd>
-          </div>
-        </dl>
       </section>
+
+      <section class="profile-sec has-particles" id="company" aria-labelledby="company-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="profile" data-reveal>
+          <h2 class="profile-title" id="company-title"><span class="eyebrow">Corporate Profile</span>会社概要</h2>
+          <dl>
+            <div>
+              <dt>会社名</dt>
+              <dd>株式会社EDEN BANK（エデンバンク）</dd>
+            </div>
+            <div>
+              <dt>代表取締役</dt>
+              <dd><a href="representative.html">田中 弘樹 ↗</a></dd>
+            </div>
+            <div>
+              <dt>事業領域</dt>
+              <dd>リユース事業 / 卸事業 / 不動産事業 / 買取事業</dd>
+            </div>
+            <div>
+              <dt>所在地</dt>
+              <dd>〒810-0074<br />福岡市中央区大手門二丁目2番24号<br />BLAROCK.OTEMON 3階・4階</dd>
+            </div>
+            <div>
+              <dt>電話番号</dt>
+              <dd><a href="tel:0927535559">092-753-5559</a></dd>
+            </div>
+            <div>
+              <dt>グループ</dt>
+              <dd><a href="index.html#group">EDEN Group ↗</a></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="related has-particles" id="related" aria-labelledby="related-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Related</p>
+          <h2 class="sec-title" id="related-title">
+            <span class="display-en">Group</span><span class="sec-jp">グループのご紹介</span>
+          </h2>
+        </div>
+        <div class="company-grid">
+          <a class="company" href="eden-production.html" data-reveal>
+            <span class="company-media"><img src="assets/pageant-stage-editorial.png" alt="" loading="lazy" /></span>
+            <span class="company-body">
+              <span class="company-num">02</span>
+              <span class="company-name">EDEN PRODUCTION</span>
+              <span class="company-jp">株式会社EDEN PRODUCTION</span>
+              <span class="company-desc">ミスコン・イベント・ライバー</span>
+              <span class="company-more">会社ページへ ↗</span>
+            </span>
+          </a>
+          <a class="company" href="representative.html" data-reveal>
+            <span class="company-media"><img src="assets/hero-tower-sharp.png" alt="" loading="lazy" /></span>
+            <span class="company-body">
+              <span class="company-num">CEO</span>
+              <span class="company-name">CEO MESSAGE</span>
+              <span class="company-jp">代表メッセージ</span>
+              <span class="company-desc">代表取締役 田中 弘樹</span>
+              <span class="company-more">メッセージを読む ↗</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
       <section class="contact has-particles" id="contact" aria-labelledby="contact-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-
-        <div class="section-kicker">Contact</div>
-        <h2 id="contact-title">お問い合わせ</h2>
-        <p>事業に関するご相談は、お電話でご連絡ください。</p>
-        <a class="phone" href="tel:0927535559">092-753-5559 ↗</a>
+        <div class="contact-inner" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 class="contact-title" id="contact-title">
+            <span class="display-en">Get in touch</span><span class="sec-jp">お問い合わせ</span>
+          </h2>
+          <p class="contact-text">事業に関するご相談は、お電話でご連絡ください。</p>
+          <a class="contact-tel" href="tel:0927535559" data-magnetic><span>092-753-5559</span></a>
+        </div>
       </section>
     </main>
     <footer class="site-footer has-particles">
@@ -222,8 +282,8 @@
         <span>© EDEN Group. All rights reserved.</span><a class="site-footer__backtop" href="#">BACK TO TOP ↑</a>
       </div>
     </footer>
-    <script src="js/site.js"></script>
-    <script src="js/motion.js" defer></script>
+    <script src="js/vendor/lenis.min.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script src="js/particles.js" defer></script>
   </body>
 </html>

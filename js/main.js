@@ -1,4 +1,4 @@
-// EDEN Group トップページの動き
+// EDEN Group サイト共通の動き（トップ・下層ページ）
 (() => {
   const root = document.documentElement;
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -58,7 +58,7 @@
     const y = scrollY;
     header.classList.toggle("scrolled", y > 40);
     const max = document.documentElement.scrollHeight - innerHeight;
-    progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+    if (progress) progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
     if (!reduceMotion) {
       parallax.forEach((img) => {
         const box = img.parentElement.getBoundingClientRect();
@@ -93,7 +93,7 @@
     bar.style.setProperty("--slide-ms", SLIDE_MS + "ms");
     bar.classList.add("is-running");
   };
-  if (slides.length > 1 && !reduceMotion) {
+  if (slides.length > 1 && bar && !reduceMotion) {
     runBar();
     setInterval(() => {
       if (document.hidden) return;
@@ -123,11 +123,19 @@
 
   // ---------- 大きな英字見出しを1文字ずつに分ける ----------
   document.querySelectorAll(".display-en").forEach((el) => {
-    const text = el.textContent;
+    const text = el.textContent.trim();
     el.setAttribute("aria-label", text);
-    el.innerHTML = [...text]
-      .map((c, i) => `<span class="ch" style="--i:${i}" aria-hidden="true">${c === " " ? " " : c}</span>`)
-      .join("");
+    // 単語の途中で折り返さないよう、単語ごとにまとめてから1文字ずつに分ける
+    let n = 0;
+    el.innerHTML = text
+      .split(" ")
+      .map(
+        (word) =>
+          `<span class="word" aria-hidden="true">${[...word]
+            .map((c) => `<span class="ch" style="--i:${n++}">${c}</span>`)
+            .join("")}</span>`,
+      )
+      .join(" ");
   });
   document.querySelectorAll(".biz-row").forEach((row, i) => row.style.setProperty("--d", i % 4));
 
@@ -198,7 +206,7 @@
     root.classList.add("has-cursor");
     const cursor = document.querySelector(".cursor");
     const float = document.querySelector(".biz-float");
-    const floatImg = float.querySelector("img");
+    const floatImg = float ? float.querySelector("img") : null;
     let mx = innerWidth / 2,
       my = innerHeight / 2,
       cx = mx,
@@ -215,8 +223,10 @@
       fx += (mx - fx) * 0.1;
       fy += (my - fy) * 0.1;
       cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      float.style.left = fx + "px";
-      float.style.top = fy + "px";
+      if (float) {
+        float.style.left = fx + "px";
+        float.style.top = fy + "px";
+      }
       requestAnimationFrame(loop);
     };
     requestAnimationFrame(loop);
@@ -226,12 +236,13 @@
     });
     document.querySelectorAll(".biz-row").forEach((row) => {
       row.addEventListener("mouseenter", () => {
+        if (!float) return;
         floatImg.src = row.dataset.img;
         float.classList.add("is-on");
         if (row.tagName === "A") cursor.classList.add("is-view");
       });
       row.addEventListener("mouseleave", () => {
-        float.classList.remove("is-on");
+        if (float) float.classList.remove("is-on");
         cursor.classList.remove("is-view");
       });
     });

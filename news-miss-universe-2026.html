@@ -30,56 +30,74 @@
       content="https://eden-group-corporate.hcf77vpx65.chatgpt.site/assets/news-sayuki-2026.jpg"
     />
     <link rel="preload" as="image" href="assets/news-sayuki-2026.jpg" />
-
-    <link rel="stylesheet" href="css/company.css" />
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="application-name" content="EDEN Group" />
     <meta name="apple-mobile-web-app-title" content="EDEN Group" />
-    <link rel="stylesheet" href="css/editorial.css" />
-    <link rel="stylesheet" href="css/motion.css" />
+    <script>
+      document.documentElement.classList.add("js", "intro-skip", "is-ready");
+    </script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/particles.css" />
   </head>
-  <body class="news-article-page">
-    <header class="header">
+  <body class="page">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">VIEW</span></div>
+    <header class="header" id="top">
       <a class="brand" href="index.html" aria-label="EDEN Group トップへ"
         ><span class="brand-mark" aria-hidden="true"></span><span>EDEN<small>GROUP</small></span></a
-      ><button class="menu" type="button" aria-expanded="false" aria-controls="page-nav">MENU</button>
-      <nav class="nav" id="page-nav" aria-label="メインナビゲーション">
+      >
+      <button class="menu" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
         <a href="index.html#about">ABOUT</a><a href="index.html#business">BUSINESS</a>
         <div class="nav-group">
-          <a class="nav-group__label" href="index.html#group" aria-haspopup="true">COMPANIES<span class="nav-caret" aria-hidden="true"></span></a>
+          <a class="nav-group__label" href="index.html#group" aria-haspopup="true"
+            >COMPANIES<span class="nav-caret" aria-hidden="true"></span
+          ></a>
           <div class="nav-group__menu">
             <a href="eden-bank.html">EDEN BANK</a><a href="eden-production.html">EDEN PRODUCTION</a
             ><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a>
           </div>
         </div>
         <a href="representative.html">CEO MESSAGE</a><a href="index.html#news">NEWS</a><a href="recruit.html">RECRUIT</a
-        ><a class="home" href="index.html#contact">CONTACT</a>
+        ><a class="nav-contact" href="#contact">CONTACT</a>
       </nav>
     </header>
     <main>
-      <article class="news-article has-particles">
+      <section class="page-hero is-plain has-particles" data-density="0.5" aria-labelledby="page-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="editorial-kicker">NEWS / EDEN PRODUCTION</div>
-        <div class="news-meta"><span>2026</span><span>MISS UNIVERSE JAPAN</span></div>
-        <h1 id="hero-title">
-          <span>福岡から、日本代表へ。</span><span>伊藤さゆき、Miss Universe Japanグランプリ受賞。</span>
-        </h1>
-        <p class="article-lead">ベスト・オブ・ミス福岡から、日本代表が誕生しました。</p>
-        <figure>
+        <div class="page-hero-inner" data-reveal>
+          <nav class="crumbs" aria-label="現在の位置">
+            <a href="index.html">Home</a><span aria-hidden="true">/</span><span>News</span>
+          </nav>
+          <p class="eyebrow">News — EDEN Production</p>
+          <h1 class="page-title page-title-jp" id="page-title" style="font-size: clamp(40px, 5.6vw, 96px)">
+            <span class="line"><span>福岡から、</span></span
+            ><span class="line"
+              ><span><em>日本代表へ。</em></span></span
+            >
+          </h1>
+          <p class="page-catch">伊藤さゆき、Miss Universe Japan グランプリ受賞。</p>
+        </div>
+      </section>
+
+      <article class="article has-particles" aria-labelledby="page-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <figure class="article-photo" data-clip>
           <img
             src="assets/news-sayuki-2026.jpg"
             alt="ベスト・オブ・ミス福岡での伊藤さゆきさん"
             width="1506"
             height="1506"
+            loading="lazy"
           />
-          <figcaption>ベスト・オブ・ミス福岡での伊藤さゆきさん</figcaption>
         </figure>
-        <div class="article-body">
-          <p>
+        <div class="article-body" data-reveal>
+          <p class="eyebrow">2026 — Miss Universe Japan</p>
+          <p style="margin-top: 30px">
             ベスト・オブ・ミス福岡から選出された伊藤さゆきさんが、2026年のミスユニバースジャパン（Miss Universe
             Japan）でグランプリを受賞しました。
           </p>
@@ -88,10 +106,24 @@
             EDEN
             PRODUCTIONは、ベスト・オブ・ミス福岡を通じて、一人ひとりの挑戦を支えています。伊藤さゆきさんのさらなる活躍を応援してまいります。
           </p>
-          <a class="editorial-link" href="best-of-miss-fukuoka.html">ベスト・オブ・ミス福岡について</a>
+          <div class="article-links">
+            <a class="btn-line" href="best-of-miss-fukuoka.html"><span>ベスト・オブ・ミス福岡について</span></a>
+            <a class="btn-line" href="index.html#news"><span>ニュース・トピックスに戻る</span></a>
+          </div>
         </div>
-        <a class="article-back" href="index.html#news">ニュース・トピックスに戻る</a>
       </article>
+
+      <section class="contact has-particles" id="contact" aria-labelledby="contact-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="contact-inner" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 class="contact-title" id="contact-title">
+            <span class="display-en">Get in touch</span><span class="sec-jp">お問い合わせ</span>
+          </h2>
+          <p class="contact-text">事業に関するご相談やお問い合わせは、お電話でご連絡ください。</p>
+          <a class="contact-tel" href="tel:0927535559" data-magnetic><span>092-753-5559</span></a>
+        </div>
+      </section>
     </main>
     <footer class="site-footer has-particles">
       <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
@@ -123,8 +155,8 @@
         <span>© EDEN Group. All rights reserved.</span><a class="site-footer__backtop" href="#">BACK TO TOP ↑</a>
       </div>
     </footer>
-    <script src="js/site.js"></script>
-    <script src="js/motion.js" defer></script>
+    <script src="js/vendor/lenis.min.js" defer></script>
+    <script src="js/main.js" defer></script>
     <script src="js/particles.js" defer></script>
   </body>
 </html>
