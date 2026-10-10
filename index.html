@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="application-name" content="EDEN Group" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        if (sessionStorage.getItem("edenIntro") || matchMedia("(prefers-reduced-motion: reduce)").matches)
+          document.documentElement.classList.add("intro-skip", "is-ready");
+      } catch (e) {
+        document.documentElement.classList.add("intro-skip", "is-ready");
+      }
+    </script>
     <meta name="theme-color" content="#080d13" />
     <meta
       name="description"
@@ -56,22 +65,24 @@
     </script>
     <link rel="preload" as="image" href="assets/hero-skyline-sharp.png" />
 
-    <link rel="stylesheet" href="css/top.css" />
-
     <link rel="icon" href="favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="96x96" href="favicon-96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <meta name="application-name" content="EDEN Group" />
     <meta name="apple-mobile-web-app-title" content="EDEN Group" />
-
-    <link rel="stylesheet" href="css/editorial.css" />
+    <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/films.css" />
-    <link rel="stylesheet" href="css/motion.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/particles.css" />
   </head>
-  <body>
+  <body class="home">
+    <div class="intro" aria-hidden="true">
+      <div class="intro-mark">
+        <img src="assets/eden-monogram-transparent.png" alt="" width="1374" height="1145" /><span>EDEN GROUP</span>
+      </div>
+    </div>
     <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">VIEW</span></div>
     <header class="header" id="top">
       <a class="brand" href="#top" aria-label="EDEN Group トップへ"
         ><span class="brand-mark" aria-hidden="true"></span><span>EDEN<small>GROUP</small></span></a
@@ -80,7 +91,9 @@
       <nav class="nav" id="site-nav" aria-label="メインナビゲーション">
         <a href="#about">ABOUT</a><a href="#business">BUSINESS</a>
         <div class="nav-group">
-          <a class="nav-group__label" href="#group" aria-haspopup="true">COMPANIES<span class="nav-caret" aria-hidden="true"></span></a>
+          <a class="nav-group__label" href="#group" aria-haspopup="true"
+            >COMPANIES<span class="nav-caret" aria-hidden="true"></span
+          ></a>
           <div class="nav-group__menu">
             <a href="eden-bank.html">EDEN BANK</a><a href="eden-production.html">EDEN PRODUCTION</a
             ><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a>
@@ -91,311 +104,228 @@
       </nav>
     </header>
     <main>
-      <section class="hero has-particles particles-over" aria-labelledby="hero-title" data-density="0.5">
+      <section class="hero has-particles particles-over" data-density="0.5" aria-labelledby="hero-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div
-          class="hero-scene"
-          style="
-            --scene-delay: 0s;
-            background-position: 70% center;
-            background-image: url(&quot;assets/hero-skyline-sharp.png&quot;);
-          "
-          aria-hidden="true"
-        ></div>
-        <div
-          class="hero-scene"
-          style="--scene-delay: -20s; background-image: url(&quot;assets/hero-city-premium.png&quot;)"
-          aria-hidden="true"
-        ></div>
-        <div
-          class="hero-scene"
-          style="--scene-delay: -15s; background-image: url(&quot;assets/hero-tower-sharp.png&quot;)"
-          aria-hidden="true"
-        ></div>
-        <div
-          class="hero-scene"
-          style="--scene-delay: -10s; background-image: url(&quot;assets/hero-architecture-premium.png&quot;)"
-          aria-hidden="true"
-        ></div>
-        <div
-          class="hero-scene"
-          style="--scene-delay: -5s; background-image: url(&quot;assets/hero-lobby-premium.png&quot;)"
-          aria-hidden="true"
-        ></div>
-        <div class="hero-light" aria-hidden="true"></div>
-        <div class="hero-atmosphere" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div class="hero-frame" aria-hidden="true"></div>
-        <div class="hero-wordmark hero-emblem" aria-hidden="true">
+        <div class="hero-media" aria-hidden="true">
+          <div
+            class="hero-slide is-active"
+            style="background-image: url(&quot;assets/hero-skyline-sharp.png&quot;)"
+          ></div>
+          <div class="hero-slide" style="background-image: url(&quot;assets/hero-city-premium.png&quot;)"></div>
+          <div class="hero-slide" style="background-image: url(&quot;assets/hero-tower-sharp.png&quot;)"></div>
+          <div class="hero-slide" style="background-image: url(&quot;assets/hero-architecture-premium.png&quot;)"></div>
+          <div class="hero-slide" style="background-image: url(&quot;assets/hero-lobby-premium.png&quot;)"></div>
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-emblem" aria-hidden="true">
           <img src="assets/eden-monogram-transparent.png" alt="" width="1374" height="1145" /><span>EDEN GROUP</span>
         </div>
-        <div class="hero-content">
-          <div class="mobile-emblem" aria-hidden="true">
-            <img src="assets/eden-monogram-transparent.png" alt="" width="1374" height="1145" />
-          </div>
-          <div class="eyebrow">EDEN GROUP / FUKUOKA</div>
-          <h1 id="hero-title">
-            <span class="headline-mask"><span class="headline-line">価値を見極め、</span></span
-            ><span class="headline-mask"
-              ><span class="headline-line"><em>次の可能性</em>へ。</span></span
+        <div class="hero-inner">
+          <p class="eyebrow hero-eyebrow">EDEN GROUP — FUKUOKA, JAPAN</p>
+          <h1 class="hero-title" id="hero-title">
+            <span class="line"><span>価値を見極め、</span></span
+            ><span class="line"
+              ><span><em>次の可能性</em>へ。</span></span
             >
           </h1>
-          <p class="hero-lead">福岡を拠点に、<br />7つの事業を展開しています。</p>
-          <div class="hero-actions">
-            <a class="text-link" href="#business">OUR BUSINESS</a><a class="text-link" href="recruit.html">RECRUIT</a>
+          <div class="hero-foot">
+            <p class="hero-lead">福岡を拠点に、7つの事業を展開しています。</p>
+            <a class="btn-line" href="#business"><span>OUR BUSINESS</span></a>
           </div>
         </div>
-        <div class="scene-indicator" aria-hidden="true">
-          <span>01 — 05</span
-          ><span class="scene-bars"
-            ><i style="--bar-delay: 0s"></i><i style="--bar-delay: -20s"></i><i style="--bar-delay: -15s"></i
-            ><i style="--bar-delay: -10s"></i><i style="--bar-delay: -5s"></i
-          ></span>
+        <div class="hero-index" aria-hidden="true">
+          <span class="hero-count">01</span><span class="hero-bar"><i></i></span><span>05</span>
         </div>
+        <a class="hero-scroll" href="#about"><span>SCROLL</span></a>
       </section>
-      <div class="motion-band" aria-hidden="true">
-        <div class="motion-track">
-          <span>REUSE</span><i>◆</i><span>BUYBACK</span><i>◆</i><span>WHOLESALE</span><i>◆</i><span>REAL ESTATE</span
-          ><i>◆</i><span>PAGEANT</span><i>◆</i><span>LIVE STREAMING</span><i>◆</i><span>ORDER SUITS</span><i>◆</i
-          ><span>REUSE</span><i>◆</i><span>BUYBACK</span><i>◆</i><span>WHOLESALE</span><i>◆</i><span>REAL ESTATE</span
-          ><i>◆</i><span>PAGEANT</span><i>◆</i><span>LIVE STREAMING</span><i>◆</i><span>ORDER SUITS</span><i>◆</i>
+
+      <section class="statement has-particles" id="about" aria-labelledby="about-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="statement-head" data-reveal>
+          <p class="eyebrow">About us</p>
+          <h2 class="visually-hidden" id="about-title">EDEN Groupについて</h2>
+        </div>
+        <p class="statement-text" data-words>
+          EDEN
+          Groupは、福岡を拠点に7つの事業を展開するグループです。品物の価値を見極める事業と、人の挑戦を支える事業。性格の異なる二つの軸を、ひとつのグループとして運営しています。
+        </p>
+        <dl class="facts">
+          <div data-reveal>
+            <dt>Group Companies</dt>
+            <dd><span class="fact-num" data-count="2">02</span><small>EDEN BANK / EDEN PRODUCTION</small></dd>
+          </div>
+          <div data-reveal>
+            <dt>Business Fields</dt>
+            <dd>
+              <span class="fact-num" data-count="7">07</span
+              ><small>リユース・買取・卸・不動産・ミスコン・ライバー・オーダースーツ</small>
+            </dd>
+          </div>
+          <div data-reveal>
+            <dt>Our Base</dt>
+            <dd><span class="fact-num fact-word">Fukuoka</span><small>福岡市中央区を拠点に事業を展開</small></dd>
+          </div>
+        </dl>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <div>
+            <span>Reuse</span><i>✦</i><span>Buyback</span><i>✦</i><span>Wholesale</span><i>✦</i><span>Real Estate</span
+            ><i>✦</i><span>Pageant</span><i>✦</i><span>Live Streaming</span><i>✦</i><span>Order Suits</span><i>✦</i>
+          </div>
+          <div>
+            <span>Reuse</span><i>✦</i><span>Buyback</span><i>✦</i><span>Wholesale</span><i>✦</i><span>Real Estate</span
+            ><i>✦</i><span>Pageant</span><i>✦</i><span>Live Streaming</span><i>✦</i><span>Order Suits</span><i>✦</i>
+          </div>
         </div>
       </div>
-      <section class="section about has-particles" id="about" aria-labelledby="about-title">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
 
-        <div class="section-head" data-reveal>
-          <div>
-            <div class="section-kicker">About us</div>
-            <h2 id="about-title">EDEN Groupについて</h2>
-          </div>
-        </div>
-        <div class="about-grid">
-          <div class="about-statement" data-reveal>ものと人に関わる、<br />7つの事業。</div>
-          <div data-reveal>
-            <p class="section-copy">
-              EDEN
-              Groupは福岡を拠点に、リユース、買取、卸、不動産、ミスコン、ライバー、オーダースーツの7事業を展開しています。品物の価値を見極める事業と、人の挑戦を支える事業。性格の異なる2つの軸を、ひとつのグループとして運営しています。
-            </p>
-          </div>
-        </div>
-        <div class="about-facts" aria-label="グループ概要">
-          <div class="fact">
-            <strong>02</strong><span>GROUP COMPANIES</span><small>EDEN BANK / EDEN PRODUCTION</small>
-          </div>
-          <div class="fact">
-            <strong>07</strong><span>BUSINESS FIELDS</span
-            ><small>リユース / 買取 / 卸 / 不動産 / ミスコン / ライバー / オーダースーツ</small>
-          </div>
-          <div class="fact">
-            <strong>FUKUOKA</strong><span>OUR BASE</span><small>福岡市中央区を拠点に事業を展開</small>
-          </div>
-        </div>
-      </section>
-      <section class="section business has-particles" id="business" aria-labelledby="business-title">
+      <section class="biz has-particles" id="business" aria-labelledby="biz-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="section-head" data-reveal>
-          <div>
-            <div class="section-kicker">Our business</div>
-            <h2 id="business-title">事業領域</h2>
-          </div>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Our business</p>
+          <h2 class="sec-title" id="biz-title">
+            <span class="display-en">Seven Fields</span><span class="sec-jp">事業領域</span>
+          </h2>
         </div>
-        <div class="eden-universe" aria-label="EDEN Groupの7つの事業">
-          <div class="universe-heading">
-            <span>OUR FIELDS</span>
-            <p>7つの事業</p>
-          </div>
-          <div class="universe-stage">
-            <div class="universe-ring ring-one" aria-hidden="true"></div>
-            <div class="universe-ring ring-two" aria-hidden="true"></div>
-            <div class="universe-core">
-              <img src="assets/eden-monogram-transparent.png" alt="EDEN Group" width="1374" height="1145" /><span
-                >EDEN GROUP</span
+        <ol class="biz-list">
+          <li>
+            <a class="biz-row" data-img="assets/business-reuse.jpg" href="eden-bank.html" data-reveal>
+              <span class="biz-num">01</span>
+              <span class="biz-name"><span class="biz-en">Reuse</span><span class="biz-jp">リユース事業</span></span>
+              <span class="biz-desc">品物の価値を見極め、次に必要とする人のもとへ届けます。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-reuse.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a class="biz-row" data-img="assets/business-buyback.jpg" href="eden-bank.html" data-reveal>
+              <span class="biz-num">02</span>
+              <span class="biz-name"><span class="biz-en">Buyback</span><span class="biz-jp">買取事業</span></span>
+              <span class="biz-desc">買取大吉を複数店舗運営。お客様の大切な品物と向き合います。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-buyback.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a class="biz-row" data-img="assets/business-wholesale.jpg" href="eden-bank.html" data-reveal>
+              <span class="biz-num">03</span>
+              <span class="biz-name"><span class="biz-en">Wholesale</span><span class="biz-jp">卸事業</span></span>
+              <span class="biz-desc">美容商材を中心に、商品の流通を支える卸売事業を展開しています。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-wholesale.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a class="biz-row" data-img="assets/business-realestate.jpg" href="eden-bank.html" data-reveal>
+              <span class="biz-num">04</span>
+              <span class="biz-name"
+                ><span class="biz-en">Real Estate</span><span class="biz-jp">不動産事業</span></span
               >
+              <span class="biz-desc">不動産の保有と投資を行い、長期的な資産形成に取り組んでいます。</span>
+              <span class="biz-co">EDEN BANK</span>
+              <img class="biz-thumb" src="assets/business-realestate.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a class="biz-row" data-img="assets/business-pageant.jpg" href="best-of-miss-fukuoka.html" data-reveal>
+              <span class="biz-num">05</span>
+              <span class="biz-name"><span class="biz-en">Pageant</span><span class="biz-jp">ミスコン事業</span></span>
+              <span class="biz-desc">ベスト・オブ・ミス福岡を主催。4大会の福岡代表選出と出場者の挑戦を支えます。</span>
+              <span class="biz-co">EDEN PRODUCTION</span>
+              <img class="biz-thumb" src="assets/business-pageant.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <a class="biz-row" data-img="assets/business-livestream.jpg" href="eden-production.html" data-reveal>
+              <span class="biz-num">06</span>
+              <span class="biz-name"
+                ><span class="biz-en">Live Streaming</span><span class="biz-jp">ライバー事業</span></span
+              >
+              <span class="biz-desc">ライバー事務所「oneself」を通じて、配信者の育成と活動をサポートします。</span>
+              <span class="biz-co">EDEN PRODUCTION</span>
+              <img class="biz-thumb" src="assets/business-livestream.jpg" alt="" loading="lazy" />
+            </a>
+          </li>
+          <li>
+            <div class="biz-row" data-img="assets/business-suits.jpg" data-reveal>
+              <span class="biz-num">07</span>
+              <span class="biz-name"
+                ><span class="biz-en">Order Suits</span><span class="biz-jp">オーダースーツ事業</span></span
+              >
+              <span class="biz-desc">一人ひとりの体型と好みに合わせて、一着を仕立てます。</span>
+              <span class="biz-co">EDEN GROUP</span>
+              <img class="biz-thumb" src="assets/business-suits.jpg" alt="" loading="lazy" />
             </div>
-            <a
-              class="eden-satellite"
-              href="#field-reuse"
-              style="--x: 50%; --y: 9%; --delay: -0s"
-              aria-label="リユース事業の紹介を見る"
-              ><span class="satellite-mark" aria-hidden="true">01</span><strong>リユース事業</strong
-              ><small>REUSE</small></a
-            ><a
-              class="eden-satellite"
-              href="#field-buyback"
-              style="--x: 79%; --y: 24%; --delay: -1.3s"
-              aria-label="買取事業の紹介を見る"
-              ><span class="satellite-mark" aria-hidden="true">02</span><strong>買取事業</strong
-              ><small>BUYBACK</small></a
-            ><a
-              class="eden-satellite"
-              href="#field-wholesale"
-              style="--x: 88%; --y: 54%; --delay: -2.6s"
-              aria-label="卸事業の紹介を見る"
-              ><span class="satellite-mark" aria-hidden="true">03</span><strong>卸事業</strong
-              ><small>WHOLESALE</small></a
-            ><a
-              class="eden-satellite"
-              href="#field-realestate"
-              style="--x: 21%; --y: 24%; --delay: -3.9000000000000004s"
-              aria-label="不動産事業の紹介を見る"
-              ><span class="satellite-mark" aria-hidden="true">04</span><strong>不動産事業</strong
-              ><small>REAL ESTATE</small></a
-            ><a
-              class="eden-satellite"
-              href="#field-pageant"
-              style="--x: 28%; --y: 83%; --delay: -5.2s"
-              aria-label="ミスコン事業の紹介を見る"
-              ><span class="satellite-mark" aria-hidden="true">05</span><strong>ミスコン事業</strong
-              ><small>PAGEANT</small></a
-            ><a
-              class="eden-satellite"
-              href="#field-livestream"
-              style="--x: 12%; --y: 54%; --delay: -6.5s"
-              aria-label="ライバー事業の紹介を見る"
-              ><span class="satellite-mark" aria-hidden="true">06</span><strong>ライバー事業</strong
-              ><small>LIVE STREAMING</small></a
-            ><a
-              class="eden-satellite"
-              href="#field-suits"
-              style="--x: 72%; --y: 83%; --delay: -7.800000000000001s"
-              aria-label="スーツ事業の紹介を見る"
-              ><span class="satellite-mark" aria-hidden="true">07</span><strong>オーダースーツ事業</strong
-              ><small>ORDER SUITS</small></a
-            >
-          </div>
-        </div>
-        <div class="business-grid">
-          <article id="field-reuse" class="business-card venture" data-reveal>
-            <div
-              class="card-media"
-              style="background-image: url(&quot;assets/business-reuse.jpg&quot;)"
-              aria-hidden="true"
-            ></div>
-            <h3>REUSE</h3>
-            <div class="jp">リユース事業</div>
-            <p>品物の価値を見極め、次に必要とする人のもとへ届けます。</p>
-          </article>
-          <article id="field-buyback" class="business-card venture" data-reveal>
-            <div
-              class="card-media"
-              style="background-image: url(&quot;assets/business-buyback.jpg&quot;)"
-              aria-hidden="true"
-            ></div>
-            <h3>BUYBACK</h3>
-            <div class="jp">買取事業</div>
-            <p>買取大吉を複数店舗運営。お客様の大切な品物と向き合います。</p>
-          </article>
-          <article id="field-wholesale" class="business-card venture" data-reveal>
-            <div
-              class="card-media"
-              style="background-image: url(&quot;assets/business-wholesale.jpg&quot;)"
-              aria-hidden="true"
-            ></div>
-            <h3>WHOLESALE</h3>
-            <div class="jp">卸事業</div>
-            <p>美容商材を中心に、商品の流通を支える卸売事業を展開しています。</p>
-          </article>
-          <article id="field-realestate" class="business-card venture" data-reveal>
-            <div
-              class="card-media"
-              style="background-image: url(&quot;assets/business-realestate.jpg&quot;)"
-              aria-hidden="true"
-            ></div>
-            <h3>REAL ESTATE</h3>
-            <div class="jp">不動産事業</div>
-            <p>不動産の保有と投資を行い、長期的な資産形成に取り組んでいます。</p>
-          </article>
-          <article id="field-pageant" class="business-card venture" data-reveal>
-            <div
-              class="card-media"
-              style="background-image: url(&quot;assets/business-pageant.jpg&quot;)"
-              aria-hidden="true"
-            ></div>
-            <h3>PAGEANT</h3>
-            <div class="jp">ミスコン事業</div>
-            <p>ベスト・オブ・ミス福岡を主催。4大会の福岡代表選出と出場者の挑戦を支えます。</p>
-            <a class="card-link" href="best-of-miss-fukuoka.html">大会について ↗</a>
-          </article>
-          <article id="field-livestream" class="business-card venture" data-reveal>
-            <div
-              class="card-media"
-              style="background-image: url(&quot;assets/business-livestream.jpg&quot;)"
-              aria-hidden="true"
-            ></div>
-            <h3>LIVE STREAMING</h3>
-            <div class="jp">ライバー事業</div>
-            <p>ライバー事務所「oneself」を通じて、配信者の育成と活動をサポートします。</p>
-            <a class="card-link" href="https://oneself-live.com/" target="_blank" rel="noopener noreferrer"
-              >oneself 公式サイト ↗</a
-            >
-          </article>
-          <article id="field-suits" class="business-card venture featured" data-reveal>
-            <div
-              class="card-media"
-              style="background-image: url(&quot;assets/business-suits.jpg&quot;)"
-              aria-hidden="true"
-            ></div>
-            <h3>ORDER SUITS</h3>
-            <div class="jp">オーダースーツ事業</div>
-            <p>一人ひとりの体型と好みに合わせて、一着を仕立てます。</p>
-          </article>
-        </div>
+          </li>
+        </ol>
+        <div class="biz-float" aria-hidden="true"><img src="assets/business-reuse.jpg" alt="" /></div>
       </section>
-      <section class="section events has-particles" id="events" aria-labelledby="events-title">
+
+      <section class="stage has-particles" id="events" aria-labelledby="stage-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="section-head" data-reveal>
-          <div>
-            <div class="section-kicker">Production & Events</div>
-            <h2 id="events-title">
-              <span class="heading-phrase">挑戦する人の、</span><span class="heading-phrase">舞台をつくる。</span>
-            </h2>
-          </div>
-          <span class="section-number">EDEN PRODUCTION</span>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Production &amp; Events</p>
+          <h2 class="sec-title" id="stage-title">
+            <span class="display-en">On Stage</span><span class="sec-jp">挑戦する人の、舞台をつくる。</span>
+          </h2>
         </div>
-        <figure class="events-photo" data-reveal>
-          <img src="assets/business-pageant.jpg" alt="ゴールドの照明が輝くイベントステージのイメージ" loading="lazy" />
+        <figure class="stage-photo" data-clip>
+          <img
+            src="assets/business-pageant.jpg"
+            alt="ゴールドの照明が輝くイベントステージ"
+            loading="lazy"
+            data-parallax
+          />
         </figure>
-        <div class="events-content">
-          <div data-reveal>
-            <div class="small-label">BEST OF MISS FUKUOKA</div>
+        <div class="stage-body">
+          <div class="stage-main" data-reveal>
+            <p class="eyebrow">Best of Miss Fukuoka</p>
             <h3>ベスト・オブ・ミス福岡</h3>
             <p>福岡代表を選出する大会を主催。出場者の育成から本番のステージまで、一人ひとりの挑戦を支えます。</p>
-            <ul class="event-list">
+            <ul class="contest-list">
               <li>ミス・ユニバース・ジャパン</li>
               <li>ミス・プラネット・ジャパン</li>
               <li>ミス・ユニバーシティ</li>
               <li>ミセス・SDGs</li>
             </ul>
-            <div class="achievement">
-              <strong>3</strong><span>年連続で全国大会の<br />日本一を輩出</span>
-            </div>
-            <div class="event-links">
-              <a href="best-of-miss-fukuoka.html">ベスト・オブ・ミス福岡 詳細 ↗</a
-              ><a href="https://www.instagram.com/bestofmiss.fukuoka/" target="_blank" rel="noopener noreferrer"
-                >ベスト・オブ・ミス福岡 Instagram ↗</a
+            <div class="stage-links">
+              <a class="btn-line" href="best-of-miss-fukuoka.html"><span>大会について</span></a>
+              <a
+                class="text-link"
+                href="https://www.instagram.com/bestofmiss.fukuoka/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram ↗</a
               >
             </div>
           </div>
-          <div class="events-side" data-reveal>
-            <div class="small-label">EVENTS & LIVE STREAMING</div>
-            <h3>企画から運営まで、<br />体験をつくる。</h3>
-            <p>
-              企業タイアップイベントや体験型企画、美容・キャリア分野のセミナーを企画・運営。ライバー事務所「oneself」では、配信者の育成と活動をサポートしています。
-            </p>
-            <div class="event-links">
-              <a href="https://oneself-live.com/" target="_blank" rel="noopener noreferrer">oneself 公式サイト ↗</a>
+          <div class="stage-side">
+            <div class="achievement" data-reveal>
+              <span class="achievement-num">3</span>
+              <p>年連続で<br />全国大会の日本一を輩出</p>
+            </div>
+            <div class="stage-events" data-reveal>
+              <p class="eyebrow">Events &amp; Live Streaming</p>
+              <p>
+                企業タイアップイベントや体験型企画、美容・キャリア分野のセミナーを企画・運営。ライバー事務所「oneself」では、配信者の育成と活動をサポートしています。
+              </p>
+              <a class="text-link" href="https://oneself-live.com/" target="_blank" rel="noopener noreferrer"
+                >oneself 公式サイト ↗</a
+              >
             </div>
           </div>
         </div>
       </section>
+
       <section class="bom-gallery has-particles" id="movies" aria-labelledby="bom-movies-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="bom-gallery-heading">
-          <div>
-            <p>BEST OF MISS FUKUOKA / FILMS</p>
-            <h2 id="bom-movies-title">輝く瞬間を、映像で。</h2>
-          </div>
-          <span>2026 / 2025</span>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Best of Miss Fukuoka — Films</p>
+          <h2 class="sec-title" id="bom-movies-title">
+            <span class="display-en">Films</span><span class="sec-jp">輝く瞬間を、映像で。</span>
+          </h2>
         </div>
         <div class="bom-movie-grid">
           <article class="bom-movie">
@@ -504,16 +434,17 @@
           </article>
         </div>
       </section>
-      <section class="section newsroom has-particles" id="news" aria-labelledby="news-title">
+
+      <section class="news has-particles" id="news" aria-labelledby="news-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="section-head" data-reveal>
-          <div>
-            <div class="section-kicker">News</div>
-            <h2 id="news-title">ニュース・トピックス</h2>
-          </div>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">News</p>
+          <h2 class="sec-title" id="news-title">
+            <span class="display-en">News</span><span class="sec-jp">ニュース・トピックス</span>
+          </h2>
         </div>
-        <a class="news-feature" href="news-miss-universe-2026.html" data-reveal
-          ><div class="news-picture">
+        <a class="news-card" href="news-miss-universe-2026.html" data-reveal>
+          <figure class="news-photo" data-clip>
             <img
               src="assets/news-sayuki-2026.jpg"
               alt="ベスト・オブ・ミス福岡での伊藤さゆきさん"
@@ -521,55 +452,49 @@
               height="1506"
               loading="lazy"
             />
-          </div>
-          <div class="news-feature-copy">
-            <div class="news-meta"><span>2026</span><span>EDEN PRODUCTION / AWARD</span></div>
-            <h3><span>福岡から、</span><span>日本代表へ。</span></h3>
-            <p class="news-subtitle">伊藤さゆき、Miss Universe Japan<br />グランプリ受賞。</p>
+          </figure>
+          <div class="news-copy">
+            <p class="news-meta"><span>2026</span><span>EDEN PRODUCTION / AWARD</span></p>
+            <h3>福岡から、<br />日本代表へ。</h3>
+            <p class="news-sub">伊藤さゆき、Miss Universe Japan グランプリ受賞。</p>
             <p class="news-summary">ベスト・オブ・ミス福岡から、日本の頂点へ。日本代表として世界の舞台に挑みます。</p>
-            <span class="editorial-link">記事を読む</span>
-          </div></a
-        >
+            <span class="btn-line"><span>記事を読む</span></span>
+          </div>
+        </a>
       </section>
-      <section class="section group has-particles" id="group" aria-labelledby="group-title">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
 
-        <div class="section-head" data-reveal>
-          <div>
-            <div class="section-kicker">Group Companies</div>
-            <h2 id="group-title">グループについて</h2>
-          </div>
+      <section class="group has-particles" id="group" aria-labelledby="group-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="sec-head" data-reveal>
+          <p class="eyebrow">Group Companies</p>
+          <h2 class="sec-title" id="group-title">
+            <span class="display-en">Two Companies</span><span class="sec-jp">ものの事業と、人の事業。</span>
+          </h2>
         </div>
-        <div class="group-intro">
-          <p class="statement" data-reveal>ものの事業と、<br />人の事業。</p>
-          <p data-reveal>
-            株式会社EDEN BANKがリユース・買取・卸・不動産を、株式会社EDEN
-            PRODUCTIONがミスコン・イベント・ライバーを担っています。
-          </p>
+        <div class="company-grid">
+          <a class="company" href="eden-bank.html" data-reveal>
+            <span class="company-media"><img src="assets/business-realestate.jpg" alt="" loading="lazy" /></span>
+            <span class="company-body">
+              <span class="company-num">01</span>
+              <span class="company-name">EDEN BANK</span>
+              <span class="company-jp">株式会社EDEN BANK</span>
+              <span class="company-desc">リユース・卸・不動産・買取</span>
+              <span class="company-more">会社ページへ ↗</span>
+            </span>
+          </a>
+          <a class="company" href="eden-production.html" data-reveal>
+            <span class="company-media"><img src="assets/pageant-stage-editorial.png" alt="" loading="lazy" /></span>
+            <span class="company-body">
+              <span class="company-num">02</span>
+              <span class="company-name">EDEN PRODUCTION</span>
+              <span class="company-jp">株式会社EDEN PRODUCTION</span>
+              <span class="company-desc">ミスコン・イベント・ライバー</span>
+              <span class="company-more">会社ページへ ↗</span>
+            </span>
+          </a>
         </div>
-        <div class="group-list">
-          <a class="group-company" href="eden-bank.html" data-reveal
-            ><span class="number">01</span>
-            <div>
-              <h3>EDEN BANK</h3>
-              <p>株式会社EDEN BANK / リユース・卸・不動産・買取</p>
-            </div>
-            <span class="mark" aria-hidden="true">↗</span></a
-          ><a class="group-company" href="eden-production.html" data-reveal
-            ><span class="number">02</span>
-            <div>
-              <h3>EDEN PRODUCTION</h3>
-              <p>株式会社EDEN PRODUCTION / ミスコン・イベント・ライバー</p>
-            </div>
-            <span class="mark" aria-hidden="true">↗</span></a
-          >
-        </div>
-        <div class="profile-panel" data-reveal>
-          <div>
-            <div class="kicker">CORPORATE PROFILE</div>
-            <h3>会社概要</h3>
-            <span class="profile-deco" aria-hidden="true"></span>
-          </div>
+        <div class="profile" data-reveal>
+          <h3 class="profile-title"><span class="eyebrow">Corporate Profile</span>会社概要</h3>
           <dl>
             <div>
               <dt>グループ</dt>
@@ -587,12 +512,9 @@
               <dt>代表取締役</dt>
               <dd><a href="representative.html">田中 弘樹 ↗</a></dd>
             </div>
-            <div class="profile-address">
+            <div>
               <dt>所在地</dt>
-              <dd>
-                〒810-0074<br /><span class="street-address">福岡市中央区大手門二丁目2番24号</span><br />BLAROCK.OTEMON
-                3階・4階
-              </dd>
+              <dd>〒810-0074<br />福岡市中央区大手門二丁目2番24号<br />BLAROCK.OTEMON 3階・4階</dd>
             </div>
             <div>
               <dt>電話番号</dt>
@@ -601,57 +523,64 @@
           </dl>
         </div>
       </section>
-      <section class="section ceo-message has-particles" id="ceo-message" aria-labelledby="ceo-title">
+
+      <section class="ceo has-particles" id="ceo-message" aria-labelledby="ceo-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="ceo-layout" data-reveal>
-          <div class="ceo-brand">
-            <div class="editorial-kicker">CEO MESSAGE</div>
-            <img src="assets/eden-monogram-transparent.png" alt="" width="1374" height="1145" loading="lazy" /><span
-              >EDEN GROUP</span
-            >
-          </div>
-          <div class="ceo-copy">
-            <h2 id="ceo-title"><span>一つひとつの事業に、</span><span>誠実に。</span></h2>
-            <div class="ceo-body">
-              <p>私たちは福岡を拠点に、異なる分野の専門性を磨き、一つひとつの事業に誠実に向き合っています。</p>
-              <p><a class="ceo-more" href="representative.html#ceo-message">代表メッセージを読む ↗</a></p>
-            </div>
-            <div class="ceo-signature">
-              <span>代表取締役</span><strong>田中 弘樹</strong><small>HIROKI TANAKA</small>
-            </div>
-          </div>
+        <div class="ceo-inner" data-reveal>
+          <p class="eyebrow">CEO Message</p>
+          <h2 class="ceo-title" id="ceo-title">
+            <span class="line"><span>一つひとつの事業に、</span></span
+            ><span class="line"><span>誠実に。</span></span>
+          </h2>
+          <p class="ceo-text">
+            私たちは福岡を拠点に、異なる分野の専門性を磨き、一つひとつの事業に誠実に向き合っています。
+          </p>
+          <div class="ceo-sign"><span>代表取締役</span><strong>田中 弘樹</strong></div>
+          <a class="btn-line" href="representative.html#ceo-message"><span>代表メッセージを読む</span></a>
         </div>
       </section>
-      <section class="section vision has-particles particles-over" id="vision" aria-labelledby="vision-title">
+
+      <section class="vision has-particles particles-over" id="vision" aria-labelledby="vision-title">
         <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="vision-image" aria-hidden="true"></div>
+        <div class="vision-media" aria-hidden="true">
+          <img src="assets/architecture-hero.png" alt="" loading="lazy" data-parallax />
+        </div>
         <div class="vision-inner" data-reveal>
-          <div class="section-kicker">Vision</div>
-          <h2 id="vision-title">
-            <span class="vision-title-line">福岡から、</span><span class="vision-title-line">次の景色をつくる。</span>
+          <p class="eyebrow">Vision</p>
+          <h2 class="vision-title" id="vision-title">
+            <span class="line"><span>福岡から、</span></span
+            ><span class="line"><span>次の景色をつくる。</span></span>
           </h2>
           <p>今ある事業を磨きながら、新しい事業にも挑戦していく。福岡で長く選ばれるグループを目指します。</p>
         </div>
       </section>
-      <section class="recruit-teaser has-particles particles-over" aria-labelledby="recruit-title">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
-        <div class="inner" data-reveal>
-          <div class="section-kicker">Recruit</div>
-          <h2 id="recruit-title">ともに働く仲間を、<br />募集しています。</h2>
-          <p>7つの事業それぞれに、異なる仕事があります。経験や興味を活かせる場所を、EDEN Groupで。</p>
-          <a href="recruit.html">採用ページを見る ↗</a>
-        </div>
-      </section>
-      <section class="section contact has-particles" id="contact" aria-labelledby="contact-title">
-        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
 
-        <div data-reveal>
-          <div class="section-kicker">Contact</div>
-          <h2 id="contact-title">お問い合わせ</h2>
-          <p class="section-copy contact-copy">事業に関するご相談やお問い合わせは、<br />お電話でご連絡ください。</p>
-        </div>
-        <div class="contact-action" data-reveal>
-          <a class="contact-cta" href="tel:0927535559">092-753-5559</a>
+      <section class="recruit is-light has-particles" id="recruit" aria-labelledby="recruit-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <a class="recruit-card" href="recruit.html" data-reveal>
+          <span class="recruit-media"
+            ><img src="assets/recruit-office-editorial.png" alt="" loading="lazy" data-parallax
+          /></span>
+          <span class="recruit-body">
+            <span class="eyebrow">Recruit</span>
+            <span class="recruit-title" id="recruit-title">ともに働く仲間を、<br />募集しています。</span>
+            <span class="recruit-text"
+              >7つの事業それぞれに、異なる仕事があります。経験や興味を活かせる場所を、EDEN Groupで。</span
+            >
+            <span class="btn-line"><span>採用情報を見る</span></span>
+          </span>
+        </a>
+      </section>
+
+      <section class="contact has-particles" id="contact" aria-labelledby="contact-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="contact-inner" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2 class="contact-title" id="contact-title">
+            <span class="display-en">Get in touch</span><span class="sec-jp">お問い合わせ</span>
+          </h2>
+          <p class="contact-text">事業に関するご相談やお問い合わせは、お電話でご連絡ください。</p>
+          <a class="contact-tel" href="tel:0927535559" data-magnetic><span>092-753-5559</span></a>
         </div>
       </section>
     </main>
@@ -669,7 +598,7 @@
         <nav class="site-footer__col" aria-label="サイトマップ">
           <h3>SITEMAP</h3>
           <a href="#top">HOME</a><a href="eden-bank.html">EDEN BANK</a><a href="eden-production.html">EDEN PRODUCTION</a
-          ><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a><a href="representative.html">MESSAGE</a
+          ><a href="best-of-miss-fukuoka.html">BEST OF MISS FUKUOKA</a><a href="representative.html">CEO MESSAGE</a
           ><a href="#news">NEWS</a><a href="recruit.html">RECRUIT</a>
         </nav>
         <div class="site-footer__col">
@@ -683,10 +612,9 @@
         <span>© EDEN Group. All rights reserved.</span><a class="site-footer__backtop" href="#">BACK TO TOP ↑</a>
       </div>
     </footer>
-    <script src="js/top.js"></script>
-    <script src="js/top-motion.js" defer></script>
+    <script src="js/vendor/lenis.min.js" defer></script>
+    <script src="js/home.js" defer></script>
     <script src="js/films.js" defer></script>
-    <script src="js/motion.js" defer></script>
     <script src="js/particles.js" defer></script>
   </body>
 </html>
