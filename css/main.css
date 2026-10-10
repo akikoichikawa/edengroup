@@ -1202,7 +1202,7 @@ a.biz-row:hover .biz-en {
 .contact-text {
   color: rgba(242, 238, 230, 0.78);
 }
-.contact-tel {
+.contact-mail {
   position: relative;
   margin-top: 54px;
   padding: 26px 56px;
@@ -1214,7 +1214,7 @@ a.biz-row:hover .biz-en {
   isolation: isolate;
   transition: color 0.5s;
 }
-.contact-tel::before {
+.contact-mail::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1223,10 +1223,10 @@ a.biz-row:hover .biz-en {
   transform: translateY(101%);
   transition: transform 0.6s var(--ease);
 }
-.contact-tel:hover {
+.contact-mail:hover {
   color: var(--ink);
 }
-.contact-tel:hover::before {
+.contact-mail:hover::before {
   transform: none;
 }
 
@@ -1373,7 +1373,7 @@ a.biz-row:hover .biz-en {
   .recruit-media {
     min-height: 260px;
   }
-  .contact-tel {
+  .contact-mail {
     padding: 22px 32px;
   }
 }
@@ -1601,7 +1601,7 @@ a.biz-row:hover .biz-en {
 
 /* ===== 5回目の見直し ===== */
 /* Cormorant Garamond の数字を高さのそろった字形に（font指定で解除されるため個別に指定） */
-.contact-tel,
+.contact-mail,
 .fact-num,
 .biz-num,
 .company-num,
@@ -2115,4 +2115,23 @@ a.biz-row:hover .biz-en {
     opacity: 1;
     scale: 1.38;
   }
+}
+
+/* お問い合わせボタン（メール）：日本語の表記に合わせた文字組み */
+.contact-mail {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font:
+    300 clamp(18px, 1.7vw, 24px) / 1 var(--serif-jp);
+  letter-spacing: 0.16em;
+}
+.contact-mail::after {
+  content: "→";
+  font-family: var(--serif-en);
+  font-size: 1.1em;
+  transition: translate 0.5s var(--ease);
+}
+.contact-mail:hover::after {
+  translate: 6px 0;
 }
