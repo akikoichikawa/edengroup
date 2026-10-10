@@ -1,0 +1,624 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&display=swap");
+
+/* =========================================================
+   BEST OF MISS FUKUOKA 磨き上げレイヤー（miss.css の上に重ねる）
+   雰囲気（アイボリーと黒、大会写真、Cormorantの英字）は維持し、
+   文字組み・余白・動きを整える
+   ========================================================= */
+:root {
+  --gold-2: #d9bf8a;
+  --gold-3: #8f7448;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --serif-jp: "Noto Serif JP", serif;
+  --serif-en: "Cormorant Garamond", Georgia, serif;
+}
+html {
+  scroll-behavior: auto;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+body.bom {
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* ---------- 共通の動き（main.js と組み合わせて使う） ---------- */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-3), var(--gold-2));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: none;
+  place-items: center;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition:
+    width 0.45s var(--ease),
+    height 0.45s var(--ease),
+    margin 0.45s var(--ease),
+    background-color 0.45s;
+}
+.has-cursor .cursor {
+  display: grid;
+}
+.cursor.is-link {
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+}
+.cursor.is-hidden {
+  opacity: 0;
+}
+.cursor-label {
+  display: none;
+}
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+.line > span {
+  display: block;
+}
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 1.1s var(--ease),
+    transform 1.3s var(--ease);
+}
+.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+.display-en {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.12em;
+}
+.display-en .word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.display-en .ch {
+  display: inline-block;
+}
+.js [data-reveal] .display-en .ch {
+  transform: translateY(105%);
+  transition: transform 1.1s var(--ease);
+  transition-delay: calc(var(--i) * 30ms);
+}
+.js [data-reveal].is-in .display-en .ch {
+  transform: none;
+}
+
+/* ---------- 文字組み：日本語の見出しを明朝体に ---------- */
+h2 {
+  font-family: var(--serif-jp);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  word-break: auto-phrase;
+  text-wrap: balance;
+}
+h2 em {
+  font-weight: 300;
+}
+.winner-info h3,
+.tier-heading h3,
+.entry-panel h3 {
+  font-family: var(--serif-jp);
+  font-weight: 400;
+}
+.eyebrow,
+.section-label,
+.overline {
+  font: 500 12px/1 var(--serif-en);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* ---------- ヘッダー ---------- */
+.site-header {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+.site-header nav a {
+  position: relative;
+}
+.site-header nav a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease);
+}
+.site-header nav a:not(.nav-cta):hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---------- ヒーロー ---------- */
+.hero-photo {
+  animation: bomKenBurns 14s var(--ease) both;
+}
+@keyframes bomKenBurns {
+  from {
+    transform: scale(1.12);
+  }
+}
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(8, 9, 11, 0.74), rgba(8, 9, 11, 0.12) 72%),
+    linear-gradient(0deg, rgba(8, 9, 11, 0.62), transparent 48%);
+}
+.hero .eyebrow {
+  animation: bomFade 1.2s 0.2s var(--ease) both;
+}
+.hero h1 {
+  font-weight: 400;
+}
+.hero h1 .line > span {
+  animation: bomLineUp 1.6s var(--ease) both;
+}
+.hero h1 .line:nth-child(2) > span {
+  animation-delay: 0.14s;
+}
+.hero h1 em {
+  font-weight: 300;
+}
+.hero-copy {
+  font-family: var(--serif-jp);
+  font-weight: 300;
+  animation: bomFade 1.2s 0.7s var(--ease) both;
+}
+.hero-actions {
+  animation: bomFade 1.2s 0.9s var(--ease) both;
+}
+@keyframes bomLineUp {
+  from {
+    transform: translateY(110%);
+  }
+}
+@keyframes bomFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+.button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  letter-spacing: 0.1em;
+}
+.button.outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #fff;
+  transform: translateY(101%);
+  transition: transform 0.55s var(--ease);
+}
+.button.outline:hover {
+  color: var(--ink);
+}
+.button.outline:hover::before {
+  transform: none;
+}
+.bom-scroll {
+  position: absolute;
+  right: 7vw;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font: 500 10px/1 var(--serif-en);
+  letter-spacing: 0.4em;
+  color: rgba(255, 255, 255, 0.8);
+}
+.bom-scroll span {
+  writing-mode: vertical-rl;
+}
+.bom-scroll::after {
+  content: "";
+  width: 1px;
+  height: 70px;
+  background: linear-gradient(#eed9ac, transparent);
+  transform-origin: top;
+  animation: bomScroll 2.4s var(--ease) infinite;
+}
+@keyframes bomScroll {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  51% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+/* ---------- ABOUT：大会の説明 ---------- */
+.intro h2 {
+  margin-bottom: 40px;
+}
+.lead {
+  font-family: var(--serif-jp);
+  font-weight: 300;
+  font-size: clamp(18px, 1.7vw, 25px);
+  line-height: 2;
+  letter-spacing: 0.06em;
+  max-width: 820px;
+}
+.lead .w {
+  color: rgba(22, 23, 25, 0.18);
+  transition: color 0.35s;
+}
+.lead .w.is-on {
+  color: var(--ink);
+}
+.contest-tags {
+  counter-reset: contest;
+  margin-top: 60px;
+}
+.contest-tags span {
+  counter-increment: contest;
+  font: 400 clamp(16px, 1.4vw, 20px) / 1.4 var(--serif-en);
+  letter-spacing: 0.12em;
+}
+.contest-tags span::before {
+  content: counter(contest, decimal-leading-zero);
+  margin-right: 18px;
+  font-size: 0.7em;
+  color: var(--gold);
+}
+
+/* ---------- 2026 グランプリ ---------- */
+.winners {
+  position: relative;
+}
+.winners .section-top h2 {
+  font-size: clamp(2.4rem, 4.8vw, 5.2rem);
+}
+.winners .section-top h2 em {
+  font-style: italic;
+  color: var(--gold-2);
+}
+.winner-grid {
+  counter-reset: winner;
+  gap: 16px;
+}
+.winner {
+  counter-increment: winner;
+}
+.winner a {
+  height: clamp(380px, 40vw, 620px);
+}
+.winner a::before {
+  content: counter(winner, decimal-leading-zero);
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  z-index: 2;
+  font: 300 15px/1 var(--serif-en);
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.85);
+}
+.winner img {
+  filter: saturate(0.85) brightness(0.92);
+  transition:
+    transform 1.4s var(--ease),
+    filter 1s;
+}
+.winner:hover img {
+  transform: scale(1.06);
+  filter: saturate(1) brightness(1);
+}
+.winner-info h3 {
+  font-size: clamp(22px, 2vw, 32px);
+  letter-spacing: 0.1em;
+}
+.winner-info small {
+  display: inline-block;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.1em;
+  transition: border-color 0.5s;
+}
+.winner:hover .winner-info small {
+  border-color: var(--gold-2);
+}
+
+/* ---------- メッセージの写真 ---------- */
+.statement {
+  overflow: hidden;
+}
+.statement img {
+  height: 120%;
+  will-change: transform;
+}
+.statement h2 {
+  font-size: clamp(2.4rem, 5vw, 5.4rem);
+  line-height: 1.45;
+}
+
+/* ---------- 映像 ---------- */
+.bom-head {
+  margin-bottom: clamp(50px, 6vw, 90px);
+}
+.bom-head .kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 26px;
+  font: 500 12px/1 var(--serif-en);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-2);
+}
+.bom-head .kicker::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+}
+.bom-head h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 4vw;
+  margin: 0;
+}
+.bom-head .display-en {
+  font: 300 clamp(70px, 11vw, 190px) / 0.86 var(--serif-en);
+  letter-spacing: -0.015em;
+  color: var(--gold-2);
+}
+.bom-head .sub {
+  font: 300 clamp(18px, 1.6vw, 24px) / 1.6 var(--serif-jp);
+  letter-spacing: 0.12em;
+  color: #f2eee6;
+}
+
+/* ---------- 2027 エントリー ---------- */
+.entry h2 {
+  line-height: 1.45;
+}
+.entry-panel {
+  transition:
+    transform 0.8s var(--ease),
+    box-shadow 0.8s;
+}
+.entry-panel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -30px rgba(22, 23, 25, 0.35);
+}
+.button.dark {
+  transition:
+    background-color 0.4s,
+    transform 0.3s;
+}
+.button.dark:hover {
+  background: var(--gold-3);
+}
+
+/* ---------- 協賛企業 ---------- */
+.sponsors > h2 {
+  font-size: clamp(2rem, 3.6vw, 3.6rem);
+}
+.tier-heading h3 {
+  font-size: clamp(18px, 1.5vw, 22px);
+  letter-spacing: 0.1em;
+}
+.sponsor-logo {
+  transition:
+    transform 0.6s var(--ease),
+    box-shadow 0.6s,
+    border-color 0.6s;
+}
+.sponsor-logo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 44px -28px rgba(22, 23, 25, 0.4);
+  border-color: var(--gold);
+}
+.tier-1 .sponsor-logo {
+  padding-block: 44px;
+}
+
+/* ---------- 締め ---------- */
+.closing {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(120px, 14vw, 220px) 20px;
+}
+.closing-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  filter: brightness(0.35) saturate(0.85);
+}
+.closing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 50% 50%, rgba(23, 25, 27, 0.2), rgba(23, 25, 27, 0.85) 75%);
+}
+.closing h2 {
+  font-size: clamp(2.6rem, 6vw, 6.4rem);
+  line-height: 1.3;
+}
+.closing a {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-color: var(--gold-2);
+  color: var(--gold-2);
+  letter-spacing: 0.12em;
+  transition: color 0.5s;
+}
+.closing a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gold-2);
+  transform: translateY(101%);
+  transition: transform 0.55s var(--ease);
+}
+.closing a:hover {
+  background: none;
+  color: var(--ink);
+}
+.closing a:hover::before {
+  transform: none;
+}
+
+/* ---------- スマホ ---------- */
+@media (max-width: 650px) {
+  .bom-scroll {
+    display: none;
+  }
+  .winner-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .winner a {
+    height: 300px;
+  }
+  .winner-info {
+    left: 14px;
+    bottom: 14px;
+  }
+  .winner a::before {
+    top: 14px;
+    left: 14px;
+    font-size: 13px;
+  }
+  .winner-info h3 {
+    font-size: 18px;
+    margin: 6px 0;
+  }
+  .bom-head .display-en {
+    font-size: clamp(64px, 18vw, 80px);
+  }
+  .lead {
+    font-size: 17px;
+  }
+}
+
+/* ---------- 動きを減らす設定 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js [data-reveal],
+  .js [data-reveal] .display-en .ch {
+    opacity: 1;
+    transform: none;
+  }
+  .lead .w {
+    color: var(--ink);
+  }
+}
+
+/* ===== 2回目の見直し ===== */
+/* 日本語は斜体にせず、金色で強調 */
+.winners .section-top h2 em,
+.statement h2 em {
+  font-style: normal;
+  font-family: var(--serif-jp);
+  color: var(--gold-2);
+}
+/* 元画像に含まれる「×」が写らないよう、2・3枚目の切り取り位置をずらす（原本写真に差し替えるまでの対応） */
+.winner:nth-child(2) img,
+.winner:nth-child(3) img {
+  object-position: 80% center;
+}
+/* 4大会の名前が流れる帯 */
+.bom-marquee {
+  overflow: hidden;
+  padding: clamp(36px, 4.5vw, 70px) 0;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+.bom-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: bomMarquee 55s linear infinite;
+}
+.bom-marquee-track > div {
+  display: flex;
+  align-items: center;
+}
+.bom-marquee span {
+  padding: 0 0.4em;
+  font: 300 italic clamp(56px, 8.5vw, 150px) / 1 var(--serif-en);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(143, 116, 72, 0.55);
+}
+.bom-marquee i {
+  font-style: normal;
+  font-size: clamp(16px, 1.8vw, 26px);
+  color: var(--gold);
+}
+@keyframes bomMarquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bom-marquee-track {
+    animation: none;
+  }
+}
+@media (max-width: 650px) {
+  .winner:nth-child(2) img,
+  .winner:nth-child(3) img {
+    object-position: 96% center;
+  }
+}

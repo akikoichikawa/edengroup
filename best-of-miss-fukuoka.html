@@ -33,9 +33,15 @@
     />
     <link rel="stylesheet" href="css/miss.css" />
     <link rel="stylesheet" href="css/films.css" />
-    <link rel="stylesheet" href="css/motion.css" />
+    <link rel="stylesheet" href="css/particles.css" />
+    <link rel="stylesheet" href="css/miss-plus.css" />
+    <script>
+      document.documentElement.classList.add("js", "intro-skip", "is-ready");
+    </script>
   </head>
-  <body>
+  <body class="bom">
+    <div class="progress" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><span class="cursor-label">VIEW</span></div>
     <header class="site-header" id="top">
       <a class="wordmark" href="#top" aria-label="ベスト・オブ・ミス福岡 トップ"
         >BEST <i>OF</i> MISS<span>FUKUOKA</span></a
@@ -58,20 +64,26 @@
         <div class="hero-shade"></div>
         <div class="hero-content">
           <p class="eyebrow">FUKUOKA · JAPAN</p>
-          <h1 id="hero-title">BEST OF MISS<br /><em>FUKUOKA</em></h1>
+          <h1 id="hero-title">
+            <span class="line"><span>BEST OF MISS</span></span
+            ><span class="line"
+              ><span><em>FUKUOKA</em></span></span
+            >
+          </h1>
           <p class="hero-copy">福岡から、次の舞台へ。</p>
           <div class="hero-actions">
             <a class="button light" href="#winners">2026グランプリを見る <span aria-hidden="true">↗</span></a
             ><a class="button outline" href="#entry">2027年出場者募集 <span aria-hidden="true">↗</span></a>
           </div>
         </div>
+        <a class="bom-scroll" href="#about"><span>SCROLL</span></a>
       </section>
       <section class="intro section" id="about">
         <div class="section-label">ABOUT US</div>
         <div>
           <p class="overline">BEYOND BEAUTY</p>
           <h2>美しさの、その先へ。</h2>
-          <p class="lead">
+          <p class="lead" data-words>
             ベスト・オブ・ミス福岡は、4つの大会を合同で開催する教育型ミスコンテスト。知性、品格、社会性を磨き、福岡から日本、そして世界へ挑戦する女性を応援します。
           </p>
           <div class="contest-tags">
@@ -80,7 +92,20 @@
           </div>
         </div>
       </section>
-      <section class="winners section" id="winners">
+      <div class="bom-marquee" aria-hidden="true">
+        <div class="bom-marquee-track">
+          <div>
+            <span>Miss Universe Japan</span><i>✦</i><span>Miss Planet Japan</span><i>✦</i><span>Miss University</span
+            ><i>✦</i><span>Mrs SDGs Japan</span><i>✦</i>
+          </div>
+          <div>
+            <span>Miss Universe Japan</span><i>✦</i><span>Miss Planet Japan</span><i>✦</i><span>Miss University</span
+            ><i>✦</i><span>Mrs SDGs Japan</span><i>✦</i>
+          </div>
+        </div>
+      </div>
+      <section class="has-particles winners section" id="winners">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
         <div class="section-top">
           <div>
             <p class="section-label">2026 GRAND PRIX</p>
@@ -165,6 +190,7 @@
       </section>
       <section class="statement">
         <img
+          data-parallax
           src="https://static.wixstatic.com/media/569c4f_b339cc2ed72d4390b838bd11e4c4150e~mv2.jpg/v1/fill/w_1348,h_567,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/569c4f_b339cc2ed72d4390b838bd11e4c4150e~mv2.jpg"
           alt="ベスト・オブ・ミス福岡大会の写真"
           loading="lazy"
@@ -174,13 +200,13 @@
           <h2>挑戦する<br />すべての人に、<br /><em>輝く舞台を。</em></h2>
         </div>
       </section>
-      <section class="bom-gallery" id="movies" aria-labelledby="bom-movies-title">
-        <div class="bom-gallery-heading">
-          <div>
-            <p>BEST OF MISS FUKUOKA / FILMS</p>
-            <h2 id="bom-movies-title">輝く瞬間を、映像で。</h2>
-          </div>
-          <span>2026 / 2025</span>
+      <section class="bom-gallery has-particles" id="movies" aria-labelledby="bom-movies-title">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <div class="bom-head" data-reveal>
+          <p class="kicker">Best of Miss Fukuoka — Films</p>
+          <h2 id="bom-movies-title">
+            <span class="display-en">Films</span><span class="sub">輝く瞬間を、映像で。</span>
+          </h2>
         </div>
         <div class="bom-movie-grid">
           <article class="bom-movie">
@@ -541,7 +567,15 @@
           </div>
         </div>
       </section>
-      <section class="closing">
+      <section class="has-particles closing">
+        <div class="gold-dust-wrap" aria-hidden="true"><canvas class="gold-dust"></canvas></div>
+        <img
+          class="closing-photo"
+          src="https://static.wixstatic.com/media/569c4f_a893467cfe304154bf9c815977959554~mv2.jpeg/v1/fill/w_1348,h_936,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/569c4f_a893467cfe304154bf9c815977959554~mv2.jpeg"
+          alt=""
+          loading="lazy"
+          data-parallax
+        />
         <p>FOLLOW THE JOURNEY</p>
         <h2>福岡から、世界へ。</h2>
         <a href="https://www.instagram.com/bestofmiss.fukuoka/" target="_blank" rel="noopener noreferrer"
@@ -566,8 +600,10 @@
       </div>
       <small>© BEST OF MISS FUKUOKA</small>
     </footer>
+    <script src="js/vendor/lenis.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/particles.js" defer></script>
     <script src="js/miss.js"></script>
     <script src="js/films.js" defer></script>
-    <script src="js/motion.js" defer></script>
   </body>
 </html>

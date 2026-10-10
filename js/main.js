@@ -47,16 +47,19 @@
     nav.classList.toggle("open", open);
     if (lenis) open ? lenis.stop() : lenis.start();
   };
-  menu.addEventListener("click", () => setMenu(menu.getAttribute("aria-expanded") !== "true"));
-  nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
-  addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
+  // 共通ヘッダーのないページ（BEST OF MISS FUKUOKA）では、ページ側のメニュー処理を使う
+  if (menu && nav) {
+    menu.addEventListener("click", () => setMenu(menu.getAttribute("aria-expanded") !== "true"));
+    nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+    addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
+  }
 
   // ---------- ヘッダー・進捗バー・パララックス ----------
   const parallax = [...document.querySelectorAll("[data-parallax]")];
   let ticking = false;
   const onScroll = () => {
     const y = scrollY;
-    header.classList.toggle("scrolled", y > 40);
+    if (header) header.classList.toggle("scrolled", y > 40);
     const max = document.documentElement.scrollHeight - innerHeight;
     if (progress) progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
     if (!reduceMotion) {
@@ -286,7 +289,7 @@
   if (reduceMotion) words.forEach((w) => w.classList.add("is-on"));
 
   // ---------- カーソル・事業一覧の画像 ----------
-  if (finePointer && !reduceMotion) {
+  if (finePointer && !reduceMotion && document.querySelector(".cursor")) {
     root.classList.add("has-cursor");
     const cursor = document.querySelector(".cursor");
     const float = document.querySelector(".biz-float");
