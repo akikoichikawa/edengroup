@@ -23,7 +23,7 @@
     else target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
     return true;
   };
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  document.querySelectorAll('a[href^="#"]:not(.sat)').forEach((a) => {
     a.addEventListener("click", (e) => {
       const hash = a.getAttribute("href");
       if (hash.length < 2) {
@@ -163,6 +163,90 @@
     sat.addEventListener("focus", on);
     sat.addEventListener("blur", off);
   });
+
+  // ---------- 事業マップ（スマホ）：順番に光らせ、タップで選ぶ ----------
+  const universe = document.querySelector(".universe");
+  const caption = document.querySelector(".universe-caption");
+  if (universe && caption) {
+    const mobile = matchMedia("(max-width: 900px)");
+    const sats = [...universe.querySelectorAll(".sat")].sort((a, b) => a.dataset.order - b.dataset.order);
+    const capText = caption.querySelector(".cap-text");
+    const dots = [...caption.querySelectorAll(".cap-dots i")];
+    let active = 0;
+    let timer = null;
+    let inView = false;
+    let angle = 0;
+    const show = (i, byUser = false) => {
+      // 自動で切り替わるときは読み上げない（操作したときだけ読み上げる）
+      caption.setAttribute("aria-live", byUser ? "polite" : "off");
+      active = (i + sats.length) % sats.length;
+      const sat = sats[active];
+      sats.forEach((s) => s.classList.toggle("is-active", s === sat));
+      const tone = getComputedStyle(sat).getPropertyValue("--tone").trim();
+      caption.style.setProperty("--cap-tone", tone);
+      caption.querySelector(".cap-num").textContent = String(active + 1).padStart(2, "0");
+      caption.querySelector(".cap-jp").textContent = sat.querySelector(".sat-jp").textContent;
+      caption.querySelector(".cap-en").textContent = sat.querySelector(".sat-en").textContent;
+      caption.querySelector(".cap-desc").textContent = sat.dataset.desc;
+      caption.querySelector(".cap-link").setAttribute("href", sat.getAttribute("href"));
+      dots.forEach((d, n) => d.classList.toggle("is-on", n === active));
+      // 時計の針のように、最短の向きで回す
+      const target = (active * 360) / sats.length;
+      let diff = ((target - (angle % 360) + 540) % 360) - 180;
+      angle += diff;
+      universe.style.setProperty("--dial", angle + "deg");
+      universe.style.setProperty("--dial-tone", tone);
+      capText.classList.remove("is-swapping");
+      void capText.offsetWidth;
+      capText.classList.add("is-swapping");
+    };
+    const play = () => {
+      clearInterval(timer);
+      if (!reduceMotion && inView && mobile.matches) timer = setInterval(() => show(active + 1), 2600);
+    };
+    const pick = (i) => {
+      show(i, true);
+      clearInterval(timer);
+      timer = setTimeout(play, 7000); // 選んだ後は少し待ってから自動再生を再開
+    };
+    // 左右にスワイプして前後の事業へ
+    let sx = 0,
+      sy = 0;
+    universe.addEventListener(
+      "touchstart",
+      (e) => {
+        sx = e.touches[0].clientX;
+        sy = e.touches[0].clientY;
+      },
+      { passive: true },
+    );
+    universe.addEventListener(
+      "touchend",
+      (e) => {
+        if (!mobile.matches) return;
+        const dx = e.changedTouches[0].clientX - sx;
+        const dy = e.changedTouches[0].clientY - sy;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) pick(active + (dx < 0 ? 1 : -1));
+      },
+      { passive: true },
+    );
+    sats.forEach((sat, i) =>
+      sat.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!mobile.matches) {
+          scrollToHash(sat.getAttribute("href")); // パソコンでは事業一覧へ移動
+          return;
+        }
+        pick(i);
+      }),
+    );
+    new IntersectionObserver((entries) => {
+      inView = entries[0].isIntersecting;
+      inView ? play() : clearInterval(timer);
+    }).observe(universe);
+    mobile.addEventListener("change", play);
+    show(0);
+  }
 
   // ---------- スクロールで表示 ----------
   const io = new IntersectionObserver(
