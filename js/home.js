@@ -144,6 +144,18 @@
     });
   }
 
+  // ---------- 事業マップ：マウスを乗せた事業と中央を線でつなぐ ----------
+  document.querySelectorAll(".sat").forEach((sat) => {
+    const line = document.querySelector(`.universe-links line[data-key="${sat.dataset.key}"]`);
+    if (!line) return;
+    const on = () => line.classList.add("is-on");
+    const off = () => line.classList.remove("is-on");
+    sat.addEventListener("mouseenter", on);
+    sat.addEventListener("mouseleave", off);
+    sat.addEventListener("focus", on);
+    sat.addEventListener("blur", off);
+  });
+
   // ---------- スクロールで表示 ----------
   const io = new IntersectionObserver(
     (entries) =>

@@ -1620,3 +1620,251 @@ a.biz-row:hover .biz-en {
       linear-gradient(180deg, rgba(5, 8, 12, 0.6) 0%, transparent 20%);
   }
 }
+
+/* =========================================================
+   事業マップ（7色）
+   ========================================================= */
+.universe {
+  position: relative;
+  margin: 0 calc(var(--pad) * -0.5) clamp(80px, 9vw, 140px);
+  padding: clamp(30px, 4vw, 60px) 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 48%, rgba(201, 166, 107, 0.1), transparent 70%),
+    radial-gradient(ellipse at 50% 48%, #121a24 0%, #0a1017 45%, var(--ink) 75%);
+  border: 1px solid rgba(201, 166, 107, 0.16);
+  overflow: hidden;
+  isolation: isolate;
+}
+.universe-stage {
+  position: relative;
+  height: clamp(600px, 54vw, 820px);
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.universe-orbits {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.orbit {
+  fill: none;
+  stroke: rgba(201, 166, 107, 0.24);
+  stroke-width: 0.9;
+}
+.orbit-2 {
+  stroke: rgba(201, 166, 107, 0.12);
+}
+/* 軌道の上を周回する光 */
+.orbit-light {
+  stroke: var(--gold-2);
+  stroke-width: 1.6;
+  stroke-dasharray: 5 95;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(229, 203, 148, 0.9));
+  animation: orbitRun 18s linear infinite;
+}
+.orbit-light-2 {
+  stroke-dasharray: 4 96;
+  opacity: 0.55;
+  animation-duration: 26s;
+  animation-direction: reverse;
+}
+@keyframes orbitRun {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+/* 中央と事業をつなぐ線（マウスを乗せた事業だけ表示） */
+.universe-links line {
+  stroke: var(--tone);
+  stroke-width: 1;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+  transition:
+    stroke-dashoffset 0.8s var(--ease),
+    opacity 0.4s;
+}
+.universe-links line.is-on {
+  opacity: 0.75;
+  stroke-dashoffset: 0;
+}
+.universe-core {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  z-index: 2;
+  width: clamp(170px, 18vw, 270px);
+  translate: -50% -50%;
+  text-align: center;
+  font: 400 clamp(18px, 1.9vw, 28px) / 1 var(--serif-en);
+  letter-spacing: 0.24em;
+  color: var(--gold-2);
+}
+.universe-core img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 22px;
+  filter: drop-shadow(0 0 22px rgba(228, 186, 104, 0.25));
+  animation: coreBreath 8s ease-in-out infinite alternate;
+}
+@keyframes coreBreath {
+  to {
+    translate: 0 -6px;
+    filter: drop-shadow(0 0 30px rgba(228, 186, 104, 0.38));
+  }
+}
+/* 各事業 */
+.sat {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 3;
+  display: grid;
+  justify-items: center;
+  width: 170px;
+  translate: -50% -50%;
+  text-align: center;
+  outline-offset: 10px;
+}
+.sat-mark {
+  position: relative;
+  width: clamp(84px, 8vw, 118px);
+  aspect-ratio: 1374 / 1145;
+  /* ロゴの形に、事業の色の金属的なグラデーションを流し込む */
+  background: linear-gradient(
+    120deg,
+    var(--tone-d) 0%,
+    var(--tone) 30%,
+    var(--tone-l) 48%,
+    var(--tone) 62%,
+    var(--tone-d) 100%
+  );
+  background-size: 250% 100%;
+  -webkit-mask: url("../assets/eden-monogram-transparent.png") center / contain no-repeat;
+  mask: url("../assets/eden-monogram-transparent.png") center / contain no-repeat;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--tone) 35%, transparent));
+  animation:
+    satSheen 7s ease-in-out infinite,
+    satFloat 8s ease-in-out infinite alternate;
+  animation-delay: calc(var(--d) * -1.1s), calc(var(--d) * -1.3s);
+  transition:
+    scale 0.6s var(--ease),
+    filter 0.6s;
+}
+@keyframes satSheen {
+  0%,
+  100% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 0;
+  }
+}
+@keyframes satFloat {
+  from {
+    translate: 0 -6px;
+  }
+  to {
+    translate: 0 6px;
+  }
+}
+.sat-jp {
+  margin-top: 14px;
+  font: 400 15px/1.5 var(--serif-jp);
+  letter-spacing: 0.1em;
+  color: var(--text);
+  transition: color 0.4s;
+}
+.sat-en {
+  margin-top: 4px;
+  font: 500 10.5px/1 var(--serif-en);
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--tone);
+}
+.sat:hover .sat-mark,
+.sat:focus-visible .sat-mark {
+  scale: 1.12;
+  filter: drop-shadow(0 0 26px color-mix(in srgb, var(--tone) 70%, transparent));
+}
+.sat:hover .sat-jp,
+.sat:focus-visible .sat-jp {
+  color: var(--tone-l);
+}
+.universe.is-in .sat {
+  animation: satIn 1.2s var(--ease) both;
+  animation-delay: calc(0.2s + var(--d) * 0.09s);
+}
+@keyframes satIn {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+}
+/* 事業一覧の番号も同じ色に */
+.biz-list li .biz-num {
+  color: var(--tone);
+}
+.biz-list li .biz-num::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 1px;
+  margin-top: 12px;
+  background: var(--tone);
+  opacity: 0.8;
+}
+.biz-list li a.biz-row:hover .biz-en {
+  color: var(--tone-l);
+}
+
+@media (max-width: 900px) {
+  .universe {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .universe-stage {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 12px;
+    padding: 10px 0 20px;
+  }
+  .universe-orbits {
+    display: none;
+  }
+  .universe-core {
+    position: relative;
+    top: auto;
+    left: auto;
+    translate: none;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 160px;
+    margin-bottom: 14px;
+  }
+  .sat {
+    position: relative;
+    left: auto;
+    top: auto;
+    translate: none;
+    width: 100%;
+  }
+  .sat:last-child {
+    grid-column: 1 / -1;
+  }
+  .sat-mark {
+    width: 88px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sat-mark,
+  .universe-core img,
+  .orbit-light {
+    animation: none;
+  }
+}
