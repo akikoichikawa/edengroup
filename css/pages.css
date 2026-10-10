@@ -305,3 +305,8 @@
 .profile-sec + .related {
   border-top: 1px solid var(--line);
 }
+
+/* 暗いセクションが続く箇所（代表メッセージ → グループ会社）に区切り線 */
+.ceo + .related {
+  border-top: 1px solid var(--line);
+}
